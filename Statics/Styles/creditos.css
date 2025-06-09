@@ -20,7 +20,7 @@ body
     color: #E2552C; 
     font-family: "Mi fuente";
     font-size: 180px;
-    -webkit-text-stroke: 1px #f1b04c;
+    text-shadow: 1px 1px 4px #f1b04c;
 }
 #tabla-nom
 {
