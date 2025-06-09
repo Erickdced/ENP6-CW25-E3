@@ -16,10 +16,11 @@ body
 }
 #encabezado-principal
 {
-    text-align: center;      
+    text-align: center; 
     color: #E2552C; 
     font-family: "Mi fuente";
     font-size: 180px;
+    -webkit-text-stroke: 2px #f1b04c;
 }
 #tabla-nom
 {
