@@ -2,4 +2,22 @@
 {
     text-align: center;       
     font-size: 80px;
+    font-family: monospace;
+    font-style: oblique;
+}
+
+h2 
+{
+  .luxurious-script-regular 
+  {
+    font-family: "Luxurious Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+ul
+{
+  font-family: 'Times New Roman', Times, serif;
+
 }
