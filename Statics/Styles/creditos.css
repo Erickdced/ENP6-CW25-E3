@@ -22,6 +22,14 @@ body
     font-size: 180px;
     text-shadow: 5px 5px 4px #f1b04c;
 }
+#encabezado-principal
+{
+    text-align: center; 
+    color: #f1b04c; 
+    font-family: "Mi fuente";
+    font-size: 100px;
+    text-shadow: 5px 5px 4px #E2552C;
+}
 #tabla-nom
 {
     width: 100%;
