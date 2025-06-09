@@ -1,23 +1,22 @@
-.Creditos_H1
+body 
 {
-    text-align: center;       
+    background-color: #e3e9f3;
+}
+#encabezado-principal
+{
+    text-align: center;      
+    color: #a8b1c2; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 80px;
-    font-family: monospace;
-    font-style: oblique;
 }
-
-h2 
+#tabla-nom
 {
-  .luxurious-script-regular 
-  {
-    font-family: "Luxurious Script", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
-}
+    width: 100%;
 
-ul
-{
-  font-family: 'Times New Roman', Times, serif;
+    text-align: center; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
 
+    border-collapse: collapse;
+    margin: 0 auto;
 }
