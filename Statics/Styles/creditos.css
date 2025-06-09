@@ -25,10 +25,10 @@ body
 #equipo
 {
     text-align: center; 
-    color: #f1b04c; 
+    color: #E2552C; 
     font-family: "Mi fuente";
     font-size: 100px;
-    text-shadow: 5px 5px 4px #E2552C;
+    text-shadow: 5px 5px 4px #f1b04c;
 }
 #tabla-nom
 {
