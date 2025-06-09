@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "Mi fuente";
+  src: url(../fonts/Creditos.ttf);
+}
+@font-face {
+  font-family: "Nombres";
+  src: url(../fonts/Names.otf);
+}
+@font-face {
+  font-family: "Detalles";
+  src: url(../fonts/detalles.ttf);
+}
 body 
 {
     background-color: #e3e9f3;
@@ -5,18 +17,26 @@ body
 #encabezado-principal
 {
     text-align: center;      
-    color: #a8b1c2; 
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 80px;
+    color: #252525; 
+    font-family: "Mi fuente";
+    font-size: 180px;
 }
 #tabla-nom
 {
     width: 100%;
 
     text-align: center; 
-    font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
 
     border-collapse: collapse;
     margin: 0 auto;
+}
+th
+{
+  font-family: "Nombres";
+}
+td
+{
+  font-family: "Detalles";
+  font-size: 16px;
 }
