@@ -12,12 +12,12 @@
 }
 body 
 {
-    background-color: #e3e9f3;
+    background-color: #87CEEB;
 }
 #encabezado-principal
 {
     text-align: center;      
-    color: #252525; 
+    color: #FFA500; 
     font-family: "Mi fuente";
     font-size: 180px;
 }
