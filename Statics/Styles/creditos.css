@@ -1,12 +1,15 @@
-@font-face {
+@font-face
+{
       font-family: "Mi fuente";
       src: url("../fonts/Creditos.ttf");
-    }
-@font-face {
+}
+@font-face 
+{
   font-family: Nombres;
   src: url("../fonts/Names.otf");
 }
-@font-face {
+@font-face 
+{
   font-family: Detalles;
   src: url("../fonts/detalles.ttf");
 }
