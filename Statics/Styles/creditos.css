@@ -1,5 +1,10 @@
+@font-face {
+      font-family: "Mi fuente";
+      src: url("../fonts/Glamour.ttf");
+    }
 .Creditos_H1
 {
     text-align: center;       
     font-size: 80px;
+    font-family: "Mi fuente";
 }
