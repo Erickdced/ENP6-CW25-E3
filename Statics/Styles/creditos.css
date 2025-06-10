@@ -3,6 +3,10 @@
       font-family: "Mi fuente";
       src: url("../fonts/Creditos.ttf");
 }
+@font-face {
+  font-family: "Titulos";
+  src: url("../Fonts/Roboto.ttf");
+}
 @font-face 
 {
   font-family: Nombres;
@@ -20,8 +24,7 @@ body
 #encabezado-principal
 {
     text-align: center; 
-    color: #E2552C; 
-    font-family: "Mi fuente";
+    font-family: "Titulos";
     font-size: 180px;
     text-shadow: 5px 5px 4px #f1b04c;
 }
