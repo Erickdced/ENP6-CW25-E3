@@ -1,8 +1,3 @@
-@font-face
-{
-      font-family: "Mi fuente";
-      src: url("../fonts/Creditos.ttf");
-}
 @font-face {
   font-family: "Titulos";
   src: url("../Fonts/Roboto.ttf");
@@ -19,22 +14,22 @@
 }
 body 
 {
-    background-color: #87CEEB;
+    background-color: #0d0d0d;
 }
 #encabezado-principal
 {
     text-align: center; 
     font-family: "Titulos";
-    font-size: 180px;
-    text-shadow: 5px 5px 4px #f1b04c;
+    font-size: 90px;
+    color: #d9d9d9;
+    text-shadow: 3px 3px 1px #f1b04c;
 }
 #equipo
 {
     text-align: center; 
-    color: #E2552C; 
-    font-family: "Mi fuente";
+    color: #4F494B;
+    font-family: "Titulos";
     font-size: 50px;
-    text-shadow: 5px 5px 4px #f1b04c;
 }
 #tabla-nom
 {
@@ -43,7 +38,6 @@ body
     text-align: center; 
     font-size: 20px;
     color:#4F494B;
-    background-color: #e0b0ff;
     border-collapse: collapse;
     margin: 0 auto;
 }
