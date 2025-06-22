@@ -1,3 +1,4 @@
+<!--SEARCH-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,36 +11,59 @@
         <img href="">
         Lapse
     </header>
+    <hr class="nav_line">
     <nav>
-        <div>
-            <a href="">Mi playlist<img href=""></a>
+        <div id="nav_playlist" class="nav_option">
+            <a class="nav_option_content" href="">
+                Mi playlist
+                <img class="nav_option_icon" href="">
+            </a>
         </div>
-        <div>
-            <a href="">Mi Usuario<img href=""></a>
+        <div id="nav_user" class="nav_option">
+            <a class="nav_option_content" href="">
+                Mi Usuario
+                <img class="nav_option_icon" href="">
+            </a>
         </div>
     </nav>
+    <hr class="nav_line">
     <section>
-        <div>Buscar algo</div>
-        <div id="playlist_artista_cancion"> </div>
-        <div id="lista_busqueda">
-
+        <div id="search_input">Buscar algo</div>
+        <div id="search_button_container">
+            <button id="search_playlist_btn">Playlist</button>
+            <button id="search_artist_btn">Artistas</button>
+            <button id="search_song_btn">Canciones</button>
+        </div>
+        <div id="search_song_list">
+            <div class="search_song_name">
+                <p>Tu rolita - Artista</p>
+                <img class="search_song_favourite_star">
+            </div>
+            <div class="search_song_name">
+                <p>Tu rolita - Artista</p>
+                <img class="search_song_favourite_star">
+            </div>
+            <div class="search_song_name">
+                <p>Tu rolita - Artista</p>
+                <img class="search_song_favourite_star">
+            </div>
         </div>
     </section>
-    <aside>
-        <img href="estrella">
-        <div id="reproductor">
-            <div id="infoReproductor">
-                <p>Tu Rolita</p>
-                <p>Artista</p>
-                <img href="barra">
-                <div id="botones">
-                    <img id="previo">
-                    <img id="play">
-                    <img id="siguiente">
+    <aside class="player_aside">
+        <div id="player">
+            <iframe class="player_video" video="cancionActual"></iframe>
+            <div id="player_info">
+                <p class="player_song_name">Tu Rolita</p>
+                <p class="player_artist_name">Artista</p>
+                <img class="player_bar" href="barra">
+                <div id="player_button_container">
+                    <img id="player_previous_Btn" class="player_btn">
+                    <img id="player_play_Pause_Btn" class="player_btn">
+                    <img id="player_next_Btn" class="player_btn">
                 </div>
             </div>
-            <iframe video="cancionActual"></iframe>
         </div>
+        <img class="lapsy" href="estrella">
     </aside>
 </body>
 </html>
