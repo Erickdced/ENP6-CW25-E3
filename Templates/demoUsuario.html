@@ -1,3 +1,4 @@
+<!--USER-->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,22 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <img href="">
+    <header id="big_header">
+        <img id="big_header_bg" href="">
         Nombre de usuario
-        <img href="" id="imgUsuario">
+        <img href="" id="user_img">
     </header>
     <nav>
-        <div>
-            <a href="">Mi playlist<img href=""></a>
+        <div id="nav_playlist" class="nav_option">
+            <a class="nav_option_content" href="">
+                Mi Playlist
+                <img class="nav_option_icon" href="">
+            </a>
         </div>
-        <div>
-            <a href="">Búsqueda<img href=""></a>
+        <div id="nav_search" class="nav_option">
+            <a class="nav_option_content" href="">
+                Búsqueda
+                <img class="nav_option_icon" href="">
+            </a>
         </div>
     </nav>
-    <section>
-        <button>Canbiar nombre</button>
-        <button>Cambiar cara</button>
+    <hr class="nav_line">
+    <section id="user_config_buttons">
+        <button id="changeNameBtn" class="user_config_btn">Canbiar nombre</button>
+        <button id="changeFaceBtn" class="user_config_btn">Cambiar cara</button>
     </section>
     <footer>
         <div id="reproductor">
