@@ -1,0 +1,265 @@
+@font-face {
+    font-family: "header_font";
+    src: url(../fonts/header_Font\ \(2\).otf);
+}
+@font-face {
+    font-family: "nav_font";
+    src: url(../fonts/nav_button.otf);
+}
+
+body 
+{
+    background-color: #C8CAFF;
+    margin: 0; 
+    padding: 0; 
+}
+@font-face {
+    font-family: "recomendaciones_font";
+    src: url(../fonts/Recomendaciones_font.ttf);
+}
+@font-face {
+    font-family: "recomendaciones-text";
+    src: url(../fonts/recomendaciones-text.ttf);
+}
+@font-face {
+    font-family: "Name_song";
+    src: url(../fonts/Name_song.otf);
+}
+@font-face {
+    font-family: "Name_artist";
+    src: url(../fonts/Name_artist.ttf);
+}
+.small_header 
+{
+    width: 100%;
+    height: 130px; 
+    position: relative; 
+    margin: 0; 
+    padding: 0; 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.header_img 
+{
+    padding: 0;
+    margin: 0;
+    width: 100%; 
+    height: 100%; 
+    
+    
+}
+
+.header_text 
+{
+    position: absolute; 
+    top:10px; 
+    left:47%; 
+    color: rgb(255,255,255); 
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1); 
+    margin: 0; 
+    padding: 0;
+    font-family: "header_font";
+    
+}
+
+.nav_style 
+{ 
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-evenly; 
+    align-items: center; 
+    width:100%; 
+    padding:10px 0; 
+    box-sizing:border-box; 
+    flex-wrap: wrap;
+}
+.nav_button a
+{
+    text-decoration: none; 
+    color:#0e0d0d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "nav_font";
+    font-size:30px;
+}
+
+
+.nav_line 
+{
+    border: none; 
+    border-top: 3px dashed #615f5f;
+    width:100vw;
+}
+
+#home_section 
+{
+    padding: 0; 
+    width: 100%;
+    box-sizing: border-box; 
+    padding-bottom: 70px
+}
+
+
+.home_article 
+{
+   
+    padding:20px; 
+    margin: 20px auto; 
+    max-width:900px; 
+}
+
+.home_article_title 
+{
+    font-size:35px; 
+    color: #333; 
+    text-align: center; 
+    margin-bottom: 10px; 
+    text-shadow: 2px 2px 4px rgb(219,230,76); 
+    margin-bottom: 20px;
+    font-family: "recomendaciones_font";
+}
+
+.home_song_container 
+{
+    display:flex; 
+    flex-wrap:wrap; 
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+
+.home_song_square 
+{
+    width: 100px;
+    height: 88px;
+    background-color:#FFD580; 
+    border-radius:10px; 
+    padding:10px; 
+    text-align:center; 
+    font-size: 14px; 
+    color:#000000;
+    cursor: pointer;
+    font-family:"recomendaciones-text";
+}
+
+.home_song_square:hover 
+{
+    background-color: #FFC247; 
+    border: 3px solid #131111; 
+}
+
+.home_song_square img 
+{
+    width: 100%; 
+    height: 88px; 
+    border-radius:10px; 
+    margin-bottom: 8px;
+   
+}
+/*------------------*/
+footer 
+{
+    position: fixed;
+    width: 60%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+     left: 19%; 
+}
+
+.estrellita 
+{
+    width: 200px; 
+    height: 200px;
+}
+
+
+#reproductor_principal_wrapper 
+{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    max-width:700px;
+    height:150px;
+    background-color: #D9D9D9; 
+    border: 3px solid #131111; 
+    border-radius: 10px; 
+    padding: 5px 15px; 
+    margin-left: 1px; 
+    
+}
+
+
+#infoReproductor 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    margin-right: 15px;
+    min-width: 0;
+    padding: 0; 
+}
+
+#infoReproductor p 
+{
+    margin: 0; 
+    padding: 0;
+    color: #333;
+   
+}
+
+.Name 
+{ 
+    font-size: 42px; 
+    font-weight: bold;
+    font-family:"Name_song";
+}
+
+.Artist 
+{ 
+    font-size:  20px; 
+    color: #12174d; 
+    font-family:"Name_artis"; 
+
+}
+
+.progress-bar-img 
+{
+    width:500px; 
+    height: 5px;
+    margin:5px 0;
+}
+
+
+#botones 
+{
+    display: flex;
+    gap:15px; 
+    margin-top: 5px;
+}
+
+#botones img 
+{
+    width:20px; 
+    height:20px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+
+iframe 
+{
+    width:150px; 
+    height:100px;
+    border-radius: 8px; 
+    background-color: #FFD580;
+}
+
