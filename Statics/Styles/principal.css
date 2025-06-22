@@ -29,6 +29,10 @@ body
     font-family: "Name_artist";
     src: url(../fonts/Name_artist.ttf);
 }
+@font-face {
+    font-family: "login_text_izq";
+    src: url(../fonts/login-text.ttf);
+}
 .small_header 
 {
     width: 100%;
@@ -64,6 +68,22 @@ body
     font-family: "header_font";
     
 }
+
+.header_text_icon
+{
+    position: absolute; 
+    top:10px; 
+    left:47%; 
+    color: rgb(255,255,255); 
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1); 
+    margin: 0; 
+    padding: 0;
+    font-family: "header_font";
+    
+}
+
+/*----------------------------------------------------------------*/
 
 .nav_style 
 { 
@@ -262,4 +282,62 @@ iframe
     border-radius: 8px; 
     background-color: #FFD580;
 }
+/*--------------------------------------------------*/
+#login_welcome 
+{
+    position: relative; 
+    width: 50vw; 
+    height: 100vh; 
+}
 
+.login_welcome_img 
+{
+    position: absolute;
+    width: 100%; 
+    height: 100%; 
+}
+
+
+#login_content_wrapper 
+{
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    z-index: 2; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+#login_welcome_logo 
+{
+    position: absolute; 
+    top: 20px;
+    left: 20px;
+    color: white; 
+}
+
+#login_welcome_text 
+{
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-top: 80px; 
+    max-width: 400px; 
+}
+
+#login_welcome_text h1
+{
+    font-family: "login_text_izq";
+    font-size: 85px;
+    text-shadow: 3px 1px  #fdba4e56;
+}
+
+#login_welcome_text h2
+{
+    font-family: "recomendaciones-text";
+    font-size: 19px;
+}
