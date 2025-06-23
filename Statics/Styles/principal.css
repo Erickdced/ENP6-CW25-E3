@@ -43,6 +43,7 @@ body
     position: relative;
 }
 /*------------------------------------------------------------------------*/
+/*INICIO SESIÓN*/
 #login_welcome 
 {
     position: absolute; 
@@ -212,6 +213,7 @@ body
     
 }
 /*................................................................................................................................*/
+/*PRINCIPAL*/
 .small_header 
 {
     width: 100%;
@@ -464,3 +466,23 @@ iframe
     background-color: #FFD580;
 }
 /*--------------------------------------------------------------------------------------*/
+/*USUARIO*/
+#big_header
+{
+    width: 100%;
+    height: 270px; 
+    position: relative; 
+    margin: 0; 
+    padding: 0; 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#big_header_bg
+{
+    padding: 0;
+    margin: 0;
+    width: 100%; 
+    height: 100%;  
+}
