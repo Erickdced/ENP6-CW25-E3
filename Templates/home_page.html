@@ -1,21 +1,26 @@
-<!--SEARCH-->
+<!--HOME-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <header>
+    <header class="small_header">
         <img href="">
         Lapse
     </header>
-    <hr class="nav_line">
-    <nav>
+    <nav id="home_nav" class="nav_style">
         <div id="nav_playlist" class="nav_option">
-            <a class="nav_option_content" href="">
+            <a class="nav_option_content" id="playlist_nav_option" href="">
                 Mi playlist
+                <img class="nav_option_icon" href="">
+            </a>
+        </div>
+        <div id="nav_search" class="nav_option">
+            <a class="nav_option_content" href="">
+                Búsqueda
                 <img class="nav_option_icon" href="">
             </a>
         </div>
@@ -27,31 +32,26 @@
         </div>
     </nav>
     <hr class="nav_line">
-    <section>
-        <div id="search_input">Buscar algo</div>
-        <div id="search_button_container">
-            <button id="search_playlist_btn">Playlist</button>
-            <button id="search_artist_btn">Artistas</button>
-            <button id="search_song_btn">Canciones</button>
-        </div>
-        <div id="search_song_list">
-            <div class="search_song_name">
-                <p>Tu rolita - Artista</p>
-                <img class="search_song_favourite_star">
+    <section id="home_section">
+        <article class="home_article">
+            <div class="home_article_title">Recomendaciones</div>
+            <div class="home_song_container">
+                <div class="home_song_square">
+                    <img href="portada1" id="home_song">
+                    <br>
+                    Pie de imagen
+                </div>
+                <div class="home_song_square">
+                    <img href="portada2" id="home_song">
+                    <br>
+                    Pie de imagen
+                </div>
             </div>
-            <div class="search_song_name">
-                <p>Tu rolita - Artista</p>
-                <img class="search_song_favourite_star">
-            </div>
-            <div class="search_song_name">
-                <p>Tu rolita - Artista</p>
-                <img class="search_song_favourite_star">
-            </div>
-        </div>
+        </article>
     </section>
-    <aside class="player_aside">
+    <footer>
+        <img class="lapsy" href="estrella">
         <div id="player">
-            <iframe class="player_video" video="cancionActual"></iframe>
             <div id="player_info">
                 <p class="player_song_name">Tu Rolita</p>
                 <p class="player_artist_name">Artista</p>
@@ -62,8 +62,8 @@
                     <img id="player_next_Btn" class="player_btn">
                 </div>
             </div>
+            <iframe class="player_video" video="cancionActual"></iframe>
         </div>
-        <img class="lapsy" href="estrella">
-    </aside>
+    </footer>
 </body>
 </html>

@@ -24,13 +24,18 @@
             <p>Toma menos de 5 min</p>
         </div>
         <form id="login_sidebar_form">
-            <input type="text">
-            <input type="text">
-            <button>Submit</button>
+            <input type="text" class="login_input" id="login_mail_input" placeholder="Email" required>
+            <input type="text" class="login_input" id="login_name_input" placeholder="Nombre_de_usuario" required>
+            <input type="text" class="login_input" id="login_pswd_input" placeholder="Contraseña" required>
+            
+            <button type="submit" required>Registrarse</button>
+            <span id="error-area"></span>
         </form>
         <div id="login_sidebar_img">
             <img class="lapsy" href="estrella">   
         </div>
     </sidebar>
+
+    <script src="../Dynamics/log_in_page.js"></script>
 </body>
 </html>
