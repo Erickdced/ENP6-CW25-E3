@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../Statics/Styles/principal.css">
+    <title>Lapse Principal</title>
 </head>
 <body>
     <header class="small_header">
-        <img href="">
-        Lapse
+        <img src="../Statics/Media/img/header_img.png" class="header_img">
+        <h1 class="header_text">Lapse</h1>
     </header>
+    <!-------------------------------------------------------------------->
     <nav id="home_nav" class="nav_style">
         <div class="nav_button">
             <a href="">Mi playlist<img href=""></a>
@@ -21,6 +23,8 @@
             <a href="">Mi Usuario<img href=""></a>
         </div>
     </nav>
+    <hr class="nav_line">
+    <!-------------------------------------------------------------------->
     <section id="home_section">
         <article class="home_article">
             <div class="home_article_title">Recomendaciones</div>
@@ -35,24 +39,40 @@
                     <br>
                     Pie de imagen
                 </div>
+                <div class="home_song_square">
+                    <img href="" id="home_song">
+                    <br>
+                    Pie de imagen
+                </div>
+                <div class="home_song_square">
+                    <img href="" id="home_song">
+                    <br>
+                    Pie de imagen
+                </div>
+                <div class="home_song_square">
+                    <img href="" id="home_song">
+                    <br>
+                    Pie de imagen
+                </div>
             </div>
         </article>
     </section>
+    <!-------------------------------------------------------------------->
     <footer>
-            <img href="estrella">
-            <div id="reproductor">
-                <div id="infoReproductor">
-                    <p>Tu Rolita</p>
-                    <p>Artista</p>
-                    <img href="barra">
-                    <div id="botones">
-                        <img id="previo">
-                        <img id="play">
-                        <img id="siguiente">
-                    </div>
+        <img src="../Statics/Media/img/estrellita.png" class="estrellita">
+        <div id="reproductor_principal_wrapper">
+            <div id="infoReproductor">
+                <p class="Name">Tu Rolita</p>
+                <p class="Artist">Artista</p>
+                <img src="../Statics/Media/img/progress.png" class="progress-bar-img">
+                <div id="botones">
+                    <img id="previo" src="../Statics/Media/img/back (1).png">
+                    <img id="play" src="../Statics/Media/img/play.png">
+                    <img id="siguiente" src="../Statics/Media/img/next.png">
                 </div>
-                <iframe video="cancionActual"></iframe>
             </div>
-        </footer>
+            <iframe video="cancionActual"></iframe> 
+        </div>
+    </footer>
 </body>
 </html>
