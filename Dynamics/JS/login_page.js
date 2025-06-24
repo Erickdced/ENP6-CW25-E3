@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function()
 {
     const main_form = document.getElementById('login_sidebar_form');
