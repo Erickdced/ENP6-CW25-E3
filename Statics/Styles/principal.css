@@ -34,10 +34,19 @@
     font-family: "form_font";
     src: url(../fonts/form_form.ttf);
 }
+@font-face{
+    font-family: "kapakana";
+    src:url(../fonts/Kapakana-VariableFont_wght.ttf);
+}
+@font-face{
+    font-family: carattere;
+    src:url(../fonts/Carattere-Regular.ttf);
+}
 /*-----------------------------------------------------------------------*/
 body 
 {
     background-color: #C8CAFF;
+    height: 100%;
     margin: 0; 
     padding: 0; 
     position: relative;
@@ -231,6 +240,7 @@ body
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    background-image: url("../Media/img/header_img.png");
 }
 
 .header_img 
@@ -492,4 +502,180 @@ iframe
     margin: 0;
     width: 100%; 
     height: 100%;  
+}
+
+/*========================================================================================*/
+/*BUSCADOR*/
+
+#search_nav{ 
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-evenly; 
+    align-items: center; 
+    width:60%; 
+    padding:10px 0; 
+    box-sizing:border-box; 
+    flex-wrap: wrap;
+}
+
+.nav_option{
+    font-family: "carattere";
+    color:#28063a;
+    font-size: 30px;
+}
+
+#search_input 
+{
+    margin-bottom: 30px;
+}
+
+#search_input input[type="text"] 
+{
+    background-color: #f9e5be;
+    width: 60%;
+    border-radius:40px;
+    padding: 20px 20px;
+    font-size: 16px;
+    
+}
+
+#search_input input[type="text"]::placeholder 
+{
+    color: #000000;
+    font-family: "kapakana";
+    font-size: 50px;
+    text-align: start;
+}
+#search_button_container{
+    width: 60%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+   
+}
+#search_button_container button
+{
+    
+    font-family:"recomendaciones_font";
+    color:#28063a;
+    font-size: 30px;
+    background-color:#f9e5be;
+    padding: 10px 20px;
+}
+
+#search_button_container button:hover 
+{
+    background-color: #FFC247; 
+    border: 3px solid #131111; 
+}
+
+.search_song_name 
+{
+  font-family:"carattere";
+  font-size: 25px;
+  text-align: left;
+  background-color: #f9e5be; 
+  border: 1px solid #131111; 
+  border-radius: 4px;
+  width: 60%;
+  height: 25px;
+  padding: 30px 20px;
+}
+
+.player_aside
+{
+    display:flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-wrap: wrap-reverse;
+    max-width:50px;
+    height:700px;
+    background-color: #D9D9D9; 
+    border: 3px solid #131111; 
+    border-radius: 10px; 
+    padding: 5px 15px; 
+    margin-left: 1px; 
+    
+}
+
+
+
+.main_container {
+    display: flex;
+    height: calc(100vh - 130px); /* espacio restante tras el header */
+}
+
+/* Sección izquierda del buscador */
+section {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Reproductor lateral a la derecha */
+.player_aside {
+    background-color: #D9D9D9;
+    border: 3px solid #131111;
+    border-radius: 20px;
+    padding: 20px;
+    min-width: 240px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Video o imagen de la canción */
+.player_video {
+    width: 180px;
+    height: 180px;
+    background-color: #FFC247;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+/* Título de la canción */
+.player_song_name {
+    font-family: "Name_song";
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+/* Nombre del artista */
+.player_artist_name {
+    font-family: "Name_artist";
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Barra de progreso */
+.player_bar {
+    width: 100%;
+    height: 8px;
+    background-color: #131111;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+/* Contenedor de botones de reproducción */
+#player_button_container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Botones de reproducción */
+.player_btn {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Lapsy */
+.lapsy {
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
 }
