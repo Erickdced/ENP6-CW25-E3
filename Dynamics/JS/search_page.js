@@ -4,7 +4,7 @@ import databaseJSON from "../JS/database_JSON.js";
 
 document.addEventListener('DOMContentLoaded', function(){
     let database = [];
-    fetch("database_JSON.json")
+    fetch("../JS/database_JSON.js")
     .then(response => response.json())
     .then(response => {
         if (!response.ok) throw new Error("No se pudo cargar el archivo");
@@ -19,11 +19,12 @@ document.addEventListener('DOMContentLoaded', function(){
     song_container.innerHTML = "";
 
     for(let song in database){
-        song_container.innerHTML += 
+        song_container.innerHTML += ""
     }
+    
+    let search_result = document.getElementById('search_result');
 
     let read_text_input = document.getElementById('search-text').addEventListener("input", ()=>
-    {
-        
+    {   
     });
 });
