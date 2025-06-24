@@ -303,5 +303,14 @@ function alternaCancion(idCancion)
   }else
   {
   const Canc = ObtenerCancionId(idCancion)
+    if(Canc)
+    {
+      colaRepro.push(Canc);
+      console.log(`Cancion cuyo Id es ${idCancion} ha sido agregada a la cola`)
+
+    }else
+    {
+      console.warn("Cancion no encontrada");
+    }
   }
 }
