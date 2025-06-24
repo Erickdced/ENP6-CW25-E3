@@ -42,7 +42,7 @@ body
     padding: 0; 
     position: relative;
 }
-/*------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------*/
 /*INICIO SESIÓN*/
 #login_welcome 
 {
@@ -80,7 +80,12 @@ body
     position: absolute; 
     top:20px;
     left:20px;
-    color:#FFFF ; 
+}
+
+#login_welcome_logo h1
+{
+    color: #FFFF;
+    font-size: 2.4vw;
 }
 
 #login_welcome_text 
@@ -92,7 +97,7 @@ body
 #login_welcome_text h1
 {
     font-family: "login_text_izq";
-    font-size: 85px;
+    font-size: 5vw;
     text-shadow: 3px 1px  #000000c7;
     color: #FFFF;
     margin-bottom: 12px;
@@ -101,7 +106,7 @@ body
 #login_welcome_text h2
 {
     font-family: "recomendaciones-text";
-    font-size: 19px;
+    font-size: 1.2vw;
     color:#D9D9D9;
 }
 
@@ -116,7 +121,7 @@ body
     top: 0;
     display: flex;
     flex-direction: column; 
-    padding: 20px; 
+    padding: 2vw; 
     box-sizing: border-box; 
     justify-content: space-around;
 }
@@ -126,14 +131,14 @@ body
 {
     text-align: center; 
     margin-bottom: 40px;
-    max-width: 600px; 
+    max-width: 24vw; 
     align-self: center;
 }
 
 #login_sidebar_text h1 
 {
     font-family: "recomendaciones_font"; 
-    font-size: 70px;
+    font-size: 5vw;
     margin-bottom: 20px;
     color: #BFB4C5;
 }
@@ -141,7 +146,7 @@ body
 #login_sidebar_text p 
 {
     font-family:"form_text"; 
-    font-size: 16px;
+    font-size: 1.4vw;
     margin: 5px 0;
     color: #FFFF;
 }
@@ -149,7 +154,7 @@ body
 #login_sidebar_text h3
 {
     font-family:"form_text"; 
-    font-size: 15px;
+    font-size: 1.4vw;
     color: #FFFF;
 }
 
@@ -159,7 +164,8 @@ body
     flex-direction: column; 
     gap: 36px; 
     width: 80%; 
-    max-width: 290px; 
+    max-width: 25vw; 
+    min-width: auto;
     margin-bottom: 30px;
     align-self: center;
 }
@@ -170,7 +176,7 @@ body
     border-radius:8px;
     padding: 10px 17px;
     color:#FFFF;
-    font-size: 16px;
+    font-size: 1.4vw;
     text-align: left; 
 }
 
@@ -178,7 +184,7 @@ body
 {
     color: #D2CFD4;
     font-family:"form_font";
-    font-size: 8;
+    font-size: 1vw;
 }
 
 #login_sidebar_form button 
@@ -189,7 +195,7 @@ body
     text-align: center;
     border-radius: 8px;
     padding: 10px 10px;
-    font-size: 15px;
+    font-size: 1.5vw;
     cursor: pointer;
 }
 
@@ -201,18 +207,19 @@ body
 
 #login_sidebar_img 
 {
-    margin-top: -80px; 
+    margin-top:-6vw; 
     align-self: flex-start; 
-    margin-left: 20px;
+    margin-left: 1vw;
 }
 
 .lapsy 
 {
-    max-width: 150px; 
+    max-width: 10vw; 
+    min-width: 10vw;
     height: auto;
     
 }
-/*................................................................................................................................*/
+/*..............................................................................................................................................*/
 /*PRINCIPAL*/
 .small_header 
 {
