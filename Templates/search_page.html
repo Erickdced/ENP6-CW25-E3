@@ -1,19 +1,24 @@
 <!--SEARCH-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD:Templates/search_page.html
     
     <title>Document</title>
+=======
+    <link rel="stylesheet" href="../Statics/Styles/principal.css">
+    <title>Lapse Buscador </title>
+>>>>>>> main:Templates/demoInicioJS.html
 </head>
 <body>
-    <header>
-        <img href="">
-        Lapse
+    <header class="small_header">
+        <img src="../Statics/Media/img/header_img.png" class="header_img">
+        <h1 class="header_text">Lapse</h1>
     </header>
-    <hr class="nav_line">
-    <nav>
+    
+    <nav id="search_nav">
         <div id="nav_playlist" class="nav_option">
             <a class="nav_option_content" href="">
                 Mi playlist
@@ -28,39 +33,66 @@
         </div>
     </nav>
     <hr class="nav_line">
+<<<<<<< HEAD:Templates/search_page.html
     <section>
         <input type="text" id="search-text" placeholder="Busca algo">
 
+=======
+    <section class=player_section>
+        <div id="search_input">
+            <input type="text" placeholder="Buscar algo...">
+        </div>
+>>>>>>> main:Templates/demoInicioJS.html
         <div id="search_button_container">
             <button id="search_playlist_btn">Playlist</button>
             <button id="search_artist_btn">Artistas</button>
             <button id="search_song_btn">Canciones</button>
         </div>
+<<<<<<< HEAD:Templates/search_page.html
         
         <div id="search_result">
             
+=======
+        <br >
+        <div id="search_song_list">
+            <div class="search_song_name">
+                <p>Tu rolita - Artista</p>
+                <img class="search_song_favourite_star">
+            </div>
+            <div class="search_song_name">
+                <p>Tu rolita - Artista</p>
+                <img class="search_song_favourite_star">
+            </div>
+            <div class="search_song_name">
+                <p>Tu rolita - Artista</p>
+                <img class="search_song_favourite_star">
+            </div>
+>>>>>>> main:Templates/demoInicioJS.html
         </div>
 
     </section>
     <aside class="player_aside">
         <div id="player">
             <iframe class="player_video" video="cancionActual"></iframe>
-            <div id="player_info">
+            <div id="infoReproductor">
                 <p class="player_song_name">Tu Rolita</p>
                 <p class="player_artist_name">Artista</p>
-                <img class="player_bar" href="barra">
+                <img class="player_bar" src="../Statics/Media/img/progress.png">
                 <div id="player_button_container">
-                    <img id="player_previous_Btn" class="player_btn">
-                    <img id="player_play_Pause_Btn" class="player_btn">
-                    <img id="player_next_Btn" class="player_btn">
+                    <img id="player_previous_Btn" class="player_btn" src="../Statics/Media/img/back (1).png">
+                    <img id="player_play_Pause_Btn" class="player_btn" src="../Statics/Media/img/play.png">
+                    <img id="player_next_Btn" class="player_btn" src="../Statics/Media/img/next.png">
                 </div>
             </div>
         </div>
-        <img class="lapsy" href="estrella">
+        <img src="../Statics/Media/img/estrellita.png" class="estrellita">
     </aside>
 
+<<<<<<< HEAD:Templates/search_page.html
     <script src="../Dynamics/JS/search_test.js" type="module"></script>
     <script src="../Dynamics/JS/database_JSON.js"></script>
+=======
+>>>>>>> main:Templates/demoInicioJS.html
 </body>
 </html>
 
