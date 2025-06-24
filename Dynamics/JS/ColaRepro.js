@@ -286,11 +286,22 @@ const baseDatosJSON = {
 };
 const listCanc=baseDatosJSON
 let colaRepro=[];
-function SeleccancionId(idCancion)
+function SelecCancionId(idCancion)
 {
     return listCanc.canciones.find(cancion=>cancion.id===idCancion);
 }
 function enCola(idCancion)
 {
     return colaRepro.some(cancion => cancion.id === idCancion);
+}
+function alternaCancion(idCancion)
+{
+  if(enCola(idCancion))
+  {
+    colaRepro.filter(cancion =>cancion.id !== idCancion);
+    console.log(`La Cancion con el Id ${idCancion} ha sido eliminada de la cola`)
+  }else
+  {
+  const Canc = ObtenerCancionId(idCancion)
+  }
 }
