@@ -50,3 +50,9 @@ function deleteCookie(name)
 {
     document.cookie = `${encodeURIComponent(name)}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
 }
+
+
+function getUsername()
+{
+    return getCookie("username");    
+}
