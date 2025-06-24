@@ -39,8 +39,16 @@
     src:url(../fonts/Kapakana-VariableFont_wght.ttf);
 }
 @font-face{
-    font-family: carattere;
+    font-family: "carattere";
     src:url(../fonts/Carattere-Regular.ttf);
+}
+@font-face {
+    font-family: "Btns_usuario";
+    src: url(../fonts/Btns_usuario.ttf);
+}
+@font-face {
+    font-family: "header_user";
+    src: url(../fonts/header_title.ttf);
 }
 /*-----------------------------------------------------------------------*/
 body 
@@ -390,13 +398,13 @@ footer
     align-items: center;
     justify-content: space-evenly;
     box-sizing: border-box;
-     left: 19%; 
+    left: 15%; 
 }
 
 .estrellita 
 {
-    width: 200px; 
-    height: 200px;
+    width: 25vw; 
+    height:25vh;
 }
 
 
@@ -406,8 +414,8 @@ footer
     align-items: center;
     justify-content: space-between;
     flex-grow: 1;
-    max-width:700px;
-    height:150px;
+    max-width:55vw;
+    height:23vh;
     background-color: #D9D9D9; 
     border: 3px solid #131111; 
     border-radius: 10px; 
@@ -438,14 +446,14 @@ footer
 
 .Name 
 { 
-    font-size: 42px; 
+    font-size: 3.3vw; 
     font-weight: bold;
     font-family:"Name_song";
 }
 
 .Artist 
 { 
-    font-size:  20px; 
+    font-size:1.5vw; 
     color: #12174d; 
     font-family:"Name_artis"; 
 
@@ -453,8 +461,8 @@ footer
 
 .progress-bar-img 
 {
-    width:500px; 
-    height: 5px;
+    width:39vw; 
+    height: .5vh;
     margin:5px 0;
 }
 
@@ -468,8 +476,8 @@ footer
 
 #botones img 
 {
-    width:20px; 
-    height:20px;
+    width:1.5vw; 
+    height:3vh;
     cursor: pointer;
     margin-top: 8px;
 }
@@ -477,23 +485,20 @@ footer
 
 iframe 
 {
-    width:150px; 
-    height:100px;
+    width:13vw; 
+    height:18vh;
     border-radius: 8px; 
     background-color: #FFD580;
 }
-/*--------------------------------------------------------------------------------------*/
+/*====================================================================================================================================*/
 /*USUARIO*/
 #big_header
 {
     width: 100%;
-    height: 270px; 
+    height: 290px; 
     position: relative; 
     margin: 0; 
     padding: 0; 
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
 #big_header_bg
@@ -502,6 +507,73 @@ iframe
     margin: 0;
     width: 100%; 
     height: 100%;  
+    position: absolute;
+    top:0;
+    left:0;
+}
+.header_text_user
+{
+    position: absolute; 
+    top:13%; 
+    left:36%; 
+    color:#FFFF; 
+    font-size: 4.5vw;
+    text-shadow: 2px 2px 4px #000; 
+    margin: 0; 
+    padding: 0;
+    font-family: "nav_font";
+    
+}
+#user_img
+{
+    position: absolute;
+    top:40%;
+    left:42%;
+    width: 17vw;
+    border-radius: 100%;
+    border: 3px solid #7B6F83; 
+
+}
+
+/*...........................*/
+#user_config_buttons 
+{
+    display: flex; 
+    justify-content: space-evenly; 
+    margin: 1vw;
+}
+
+.user_config_btn 
+{
+    background-color: #FEFAAD; 
+    color: #000; 
+    font-family: "Btns_usuario";
+    text-align: center; 
+    font-size:1.5vw; 
+    padding: 1vw 2vw; 
+    border: 2px solid #000; 
+    border-radius: 0.5vw; 
+    flex-grow: 1; 
+    max-width: 200px; 
+    box-sizing: border-box; 
+    cursor: pointer;
+}
+
+.user_config_btn:hover 
+{
+    background-color:#FFC247;
+}
+
+#footer_user
+{
+    position: fixed;
+    width: 60%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    left: 20%; 
 }
 
 /*========================================================================================*/
