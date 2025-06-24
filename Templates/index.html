@@ -4,38 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../Statics/Styles/principal.css">
+    <title>Inicio Sesión</title>
 </head>
 <body>
     <section id="login_welcome">
-        <img id="login_bg_img" href="">
-        <div id="login_welcome_logo">
-            <p>Lapse</p>
+        <div id="login_content_wrapper"> 
+            <div id="login_welcome_logo">
+                <h1 class="header_text_icon">Lapse</h1>
+            </div>
+            <div id="login_welcome_text">
+                <h1>Te ayudamos a encontrar <br> los mejores beats</h1>
+                <h2>Encuentra tu música en un solo lugar</h2>
+            </div>
         </div>
-        <div id="login_welcome_text">
-            <h1>Te ayudamos ...</h1>
-            <h2>Encuentra ...</h2>
-        </div>
+        <img src="../Statics/Media/img/Dunas_login.png" class="login_welcome_img">
     </section>
+
+<!-------------------------------------------------------------------------->
     <sidebar id="login_sidebar">
         <div id="login_sidebar_text">
             <h1>Iniciar sesión</h1>
-            <p>No tienes cuenta?</p>
+            <p>¿No tienes cuenta? 
+            <h3>Crea una nueva cuenta ahora</h3>
             <p>Toma menos de 5 min</p>
         </div>
         <form id="login_sidebar_form">
+            <input type="text" class="login_input" id="login_name_input" placeholder="Nombre deusuario" required>
             <input type="text" class="login_input" id="login_mail_input" placeholder="Email" required>
-            <input type="text" class="login_input" id="login_name_input" placeholder="Nombre_de_usuario" required>
             <input type="text" class="login_input" id="login_pswd_input" placeholder="Contraseña" required>
             
             <button type="submit" required>Registrarse</button>
             <span id="error-area"></span>
         </form>
         <div id="login_sidebar_img">
-            <img class="lapsy" href="estrella">   
-        </div>
+            <img class="lapsy" src="../Statics/Media/img/estrellita.png" alt="Estrella"> </div>
     </sidebar>
 
-    <script src="../Dynamics/JS/log_in_page.js"></script>
+    <script src="../Dynamics/JS/lapse_cookies.js"></script>
+    <script src="../Dynamics/JS/index.js"></script>
 </body>
 </html>

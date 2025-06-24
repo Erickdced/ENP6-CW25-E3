@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../Statics/Styles/principal.css">
+    <title>Lapse-Usuario</title>
 </head>
 <body>
     <header id="big_header">
-        <img id="big_header_bg" href="">
+        <img id="big_header_bg" src="../Statics/Media/img/header_img.png">
         Nombre de usuario
         <img href="" id="user_img">
     </header>
+    <!---------------------------------------------->
     <nav>
         <div id="nav_playlist" class="nav_option">
             <a class="nav_option_content" href="">
@@ -27,23 +29,27 @@
         </div>
     </nav>
     <hr class="nav_line">
+    <!---------------------------------------------------------------->
+   
     <section id="user_config_buttons">
         <button id="changeNameBtn" class="user_config_btn">Canbiar nombre</button>
         <button id="changeFaceBtn" class="user_config_btn">Cambiar cara</button>
     </section>
+
+    <!------------------------------------------------------------------>
     <footer>
-        <div id="reproductor">
+        <div id="reproductor_principal_wrapper">
             <div id="infoReproductor">
-                <p>Tu Rolita</p>
-                <p>Artista</p>
-                <imgc href="barra">
+                <p class="Name">Tu Rolita</p>
+                <p class="Artist">Artista</p>
+                <img src="../Statics/Media/img/progress.png" class="progress-bar-img">
                 <div id="botones">
-                    <img id="previo">
-                    <img id="play">
-                    <img id="siguiente">
+                    <img id="previo" src="../Statics/Media/img/back (1).png">
+                    <img id="play" src="../Statics/Media/img/play.png">
+                    <img id="siguiente" src="../Statics/Media/img/next.png">
                 </div>
             </div>
-            <iframe video="cancionActual"></iframe>
+            <iframe video="cancionActual"></iframe> 
         </div>
     </footer>
 </body>
