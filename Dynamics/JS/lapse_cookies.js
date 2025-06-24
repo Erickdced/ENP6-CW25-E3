@@ -20,7 +20,7 @@
 /**
  * @param {string} cookie_name 
  * @param {string} cookie_value 
- * @param {number} lifetime 
+ * @param {number} lifetime (Days)
  */
 function setCookie(cookie_name, cookie_value, lifetime)
 {
