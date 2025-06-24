@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function()
 {
     const main_form = document.getElementById('login_sidebar_form');
@@ -58,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function()
             for (iterador in error_list)
                 error_area.innerHTML += error_list[iterador] + "<br>";
             
+
+
             return;
         }
 
@@ -75,8 +78,14 @@ function isAlphaNum(cadena)
     let regex = new RegExp("^[a-zA-Z0-9]+$");
     return regex.test(cadena.toString());
 }
-
-
+function MarkRed(input_area)
+{
+    input_area.style.borderColor = "red";
+}
+function UnmarkRed(input_area)
+{
+    input_area.style.borderColor = "red";
+}
 /*
 Página 1:
 
