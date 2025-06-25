@@ -284,5 +284,3 @@ const databaseJSON = {
     }
   ]
 };
-
-export default databaseJSON;
