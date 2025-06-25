@@ -71,22 +71,29 @@
         </div>
     </section>
     <aside class="player_aside">
-        <div id="repr">
-            <iframe class="player_video" video="cancionActual"></iframe>
+            <div id="player" class="player_video"></div>
             <div class="player_infoReproductor">
-                <p class="player_song_name">Tu Rolita</p>
-                <p class="player_artist_name">Artista</p>
-                <img class="player_bar" src="../Statics/Media/img/progress.png">
-                <div class="player_button_container">
-                    <img id="player_previous_Btn" class="player_btn" src="../Statics/Media/img/back (1).png">
-                    <img id="player_play_Pause_Btn" class="player_btn" src="../Statics/Media/img/play.png">
-                    <img id="player_next_Btn" class="player_btn" src="../Statics/Media/img/next.png">
-                    
+                <p class="Name"></p>
+                <p class="Artist"></p>
+                <div class="progress-container">
+                    <span id="currentTime">0:00</span>
+                    <input type="range" id="seekBar" value="0" step="1">
+                    <span id="duration">0:00</span>
+                </div>
+                <div id="botones">
+                    <img id="previo" src="../Statics/Media/img/back (1).png" alt="Anterior">
+                    <img id="play" src="../Statics/Media/img/play.png" alt="Reproducir/Pausar">
+                    <img id="siguiente" src="../Statics/Media/img/next.png" alt="Siguiente">
+
+                    <button id="muteBtn">🔊</button>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="100">
                 </div>
             </div>
-        </div>
         <img src="../Statics/Media/img/estrellita.png" class="lapsy">
+        </div>
     </aside>
-    </div>
+    <script src="../Dynamics/JS/database_JSON.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="../Dynamics/JS/reproductor.js"></script>
 </body>
 </html>

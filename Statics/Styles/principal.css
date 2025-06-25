@@ -328,7 +328,7 @@ body
     padding: 0; 
     width: 100%;
     box-sizing: border-box; 
-    padding-bottom: 70px
+    padding-bottom: 10px
 }
 
 
@@ -355,7 +355,6 @@ body
 {
     display:flex; 
     flex-wrap:wrap; 
-    justify-content: center;
     justify-content: space-evenly;
 }
 
@@ -378,6 +377,7 @@ body
 {
     background-color: #FFC247; 
     border: 3px solid #131111; 
+    
 }
 
 .home_song_square img 
@@ -392,8 +392,7 @@ body
 footer 
 {
     position: fixed;
-    width: 60%;
-    height: 150px;
+    
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -403,8 +402,8 @@ footer
 
 .estrellita 
 {
-    width: 25vw; 
-    height:25vh;
+    min-width: 10vw; 
+    min-height:10vh;
 }
 
 
@@ -412,10 +411,10 @@ footer
 {
     display:flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-grow: 1;
-    max-width:55vw;
-    height:23vh;
+    width: 40vw;
+    height:26vh;
     background-color: #D9D9D9; 
     border: 3px solid #131111; 
     border-radius: 10px; 
@@ -482,13 +481,10 @@ footer
     margin-top: 8px;
 }
 
-
-iframe 
-{
-    width:13vw; 
-    height:18vh;
-    border-radius: 8px; 
-    background-color: #FFD580;
+#player {
+    width: 20vw;
+    max-width: 20vw;
+    height: 23vh;
 }
 /*====================================================================================================================================*/
 /*USUARIO*/
@@ -541,6 +537,7 @@ iframe
     display: flex; 
     justify-content: space-evenly; 
     margin: 1vw;
+    flex-direction: row;
 }
 
 .user_config_btn 
@@ -648,7 +645,7 @@ section {
     gap: 10px;
    
 }
-#search_button_container button
+.search_filter_button
 {
     flex: 1;
     font-family: "recomendaciones_font";
@@ -660,6 +657,12 @@ section {
     border: none;
     cursor: pointer;
     transition: 0.3s; 
+}
+
+.search_filter_button.active
+{
+    /* Favor de agregar diseño */
+    background-color: #e7a012;
 }
 
 #search_button_container button:hover 
@@ -693,7 +696,7 @@ section {
 }
 
 .player_aside {
-    width: 300px;
+    width: 400px;
     height: 800px;
     background-color: #D9D9D9;
     border: 3px solid #131111;
@@ -712,6 +715,7 @@ section {
     align-items: center;
     flex-grow: 1;
     margin-right: 15px;
+    min-width: 150px;
     min-width: 0;
     padding: 0; 
 }
@@ -721,42 +725,11 @@ section {
     height: 200px;
     background-color: #FFC247;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     border: none;
 }
 
-.player_song_name {
-    font-family: "Name_song";
-    font-size: 30px;
-    text-align: center;
-}
 
-.player_artist_name {
-    font-family: "Name_artist";
-    font-size: 20px;
-    text-align: center;
-}
-
-.player_bar {
-    width: 100%;
-    max-width: 220px;
-    height: 8px;
-    background-color: #131111;
-    margin: 10px 0;
-    border-radius: 4px;
-}
-
-.player_button_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.player_btn {
-    width: 30px;
-    height: 30px;
-}
 
 .lapsy {
     width: 100px;

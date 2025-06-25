@@ -15,20 +15,20 @@
     <!-------------------------------------------------------------------->
     <nav  class="nav_style">
         <div id="nav_playlist" class="nav_option">
-            <a class="nav_option_content" href="">
+            <a class="nav_option_content" id="playlist_nav_option" href="playlist_page.html">
                 Mi playlist
                 <img class="nav_option_icon" href="">
             </a>
         </div>
         <div id="nav_search" class="nav_option">
-            <a class="nav_option_content" href="">
+            <a class="nav_option_content" href="search_page.html">
                 Búsqueda
                 <img class="nav_option_icon" href="">
             </a>
         </div>
         <div id="nav_user" class="nav_option">
-            <a class="nav_option_content" href="">
-                Mi Usuario
+            <a class="nav_option_content" href="usuario.html">
+                Mi Usuario  
                 <img class="nav_option_icon" href="">
             </a>
         </div>
@@ -72,17 +72,29 @@
         <img src="../Statics/Media/img/estrellita.png" class="estrellita">
         <div id="reproductor_principal_wrapper">
             <div id="infoReproductor">
-                <p class="Name">Tu Rolita</p>
-                <p class="Artist">Artista</p>
-                <img src="../Statics/Media/img/progress.png" class="progress-bar-img">
+                <p class="Name"></p>
+                <p class="Artist"></p>
+                <div class="progress-container">
+                    <span id="currentTime">0:00</span>
+                    <input type="range" id="seekBar" value="0" step="1">
+                    <span id="duration">0:00</span>
+                </div>
                 <div id="botones">
-                    <img id="previo" src="../Statics/Media/img/back (1).png">
-                    <img id="play" src="../Statics/Media/img/play.png">
-                    <img id="siguiente" src="../Statics/Media/img/next.png">
+                    <img id="previo" src="../Statics/Media/img/back (1).png" alt="Anterior">
+                    <img id="play" src="../Statics/Media/img/play.png" alt="Reproducir/Pausar">
+                    <img id="siguiente" src="../Statics/Media/img/next.png" alt="Siguiente">
+
+                    <button id="muteBtn">🔊</button>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="100">
                 </div>
             </div>
-            <iframe video="cancionActual"></iframe> 
+            <div id="player"></div>
         </div>
     </footer>
+    <script src="../Dynamics/JS/database_JSON.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="../Dynamics/JS/reproductor.js"></script>
+    <script src="../Dynamics/JS/lapse_cookies.js"></script>
+
 </body>
 </html>
