@@ -591,7 +591,7 @@ footer
 }
 .nav_option:hover
 {
-    font-size: 45px;
+    transform: scale(1.25);
 }
 
 section {
