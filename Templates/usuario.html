@@ -10,14 +10,17 @@
 <body>
     <header id="big_header">
         <img id="big_header_bg" src="../Statics/Media/img/header_img.png">
-        Nombre de usuario
-        <img href="" id="user_img">
+        <img href="../Statics/Media/img/estrellita_user.jpeg" id="user_img">
+
+        <div id="username_area">
+
+        </div>
     </header>
     <!---------------------------------------------->
-    <nav>
+    <nav class="nav_style">
         <div id="nav_playlist" class="nav_option">
             <a class="nav_option_content" href="">
-                Mi Playlist
+                Mi playlist
                 <img class="nav_option_icon" href="">
             </a>
         </div>
@@ -28,16 +31,16 @@
             </a>
         </div>
     </nav>
-    <hr class="nav_line">
+
     <!---------------------------------------------------------------->
    
     <section id="user_config_buttons">
-        <button id="changeNameBtn" class="user_config_btn">Canbiar nombre</button>
+        <button id="changeNameBtn" class="user_config_btn">Cambiar nombre</button>
         <button id="changeFaceBtn" class="user_config_btn">Cambiar cara</button>
     </section>
 
     <!------------------------------------------------------------------>
-    <footer>
+    <footer id="footer_user">
         <div id="reproductor_principal_wrapper">
             <div id="infoReproductor">
                 <p class="Name">Tu Rolita</p>
@@ -52,5 +55,9 @@
             <iframe video="cancionActual"></iframe> 
         </div>
     </footer>
+
+    <script src="../Dynamics/JS/lapse_cookies.js"></script>
+    <script src="../Dynamics/JS/user_page.js"></script>
+
 </body>
 </html>

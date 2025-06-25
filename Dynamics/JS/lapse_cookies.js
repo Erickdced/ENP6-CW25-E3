@@ -20,7 +20,7 @@
 /**
  * @param {string} cookie_name 
  * @param {string} cookie_value 
- * @param {number} lifetime 
+ * @param {number} lifetime (Days)
  */
 function setCookie(cookie_name, cookie_value, lifetime)
 {
@@ -49,4 +49,10 @@ function getCookie(cookieName) {
 function deleteCookie(name) 
 {
     document.cookie = `${encodeURIComponent(name)}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
+}
+
+
+function getUsername()
+{
+    return getCookie("username");    
 }
