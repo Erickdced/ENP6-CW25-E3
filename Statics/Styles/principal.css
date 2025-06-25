@@ -835,3 +835,15 @@ section {
     gap:10px;
     width: 100%;
 }
+
+#playlist_container .playlist_song:nth-child(odd) {
+    background-color: #d9d9d9; 
+}
+
+#playlist_container .playlist_song:nth-child(even) {
+    background-color: #c4c4d2; 
+}
+
+#playlist_container{
+    background-color: #ebebf9;
+}
