@@ -295,23 +295,14 @@ body
 { 
     display: flex; 
     flex-direction: row;
-    justify-content: space-evenly; 
+    justify-content: space-around; 
     align-items: center; 
     width:100%; 
     padding:10px 0; 
     box-sizing:border-box; 
     flex-wrap: wrap;
 }
-.nav_button a
-{
-    text-decoration: none; 
-    color:#0e0d0d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "nav_font";
-    font-size:30px;
-}
+
 
 
 .nav_line 
@@ -597,7 +588,11 @@ footer
 .nav_option{
     font-family: "carattere";
     color:#28063a;
-    font-size: 50px;
+    font-size: 40px;
+}
+.nav_option:hover
+{
+    font-size: 45px;
 }
 
 section {
@@ -775,8 +770,11 @@ section {
     align-items: center;
     color: #131111;
     box-sizing: border-box;
+    cursor: pointer;
 }
-
+.playlist_song:hover{
+    background-color: #e7a012;
+}
 .playlist_song {
     background-color: #fff9c4; 
     display: flex;
