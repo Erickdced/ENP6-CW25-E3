@@ -1,58 +1,68 @@
-/*===================GENERAL========================*/
+let search_area = document.getElementById("search-text")
+let result_area = document.getElementById("search_result");
+let song_button = document.getElementById("search_song_btn");
+let artist_button = document.getElementById("search_artist_btn");
+let album_button = document.getElementById("search_album_btn");
 
-import databaseJSON from "../JS/database_JSON.js";
+let song_list = databaseJSON.canciones;
+let sort_type = "nombre";
 
-document.addEventListener('DOMContentLoaded', function(){
-    let database = [];
-    fetch("database_JSON.json")
-    .then(response => response.json())
-    .then(response => {
-        if (!response.ok) throw new Error("No se pudo cargar el archivo");
-        return response.json();  // Convertimos a objeto JS
-    })
-    .then(data => {
-        database = data.canciones;
-    })
-    .catch(error => console.error("Error al cargar JSON:", error));
+show_all();
 
-    let song_container = document.getElementById("search_song_list");
-    song_container.innerHTML = "";
+song_button.addEventListener("click", ()=> sort_type = "nombre" );
+artist_button.addEventListener("click", ()=> sort_type = "artista" );
+album_button.addEventListener("click", ()=> sort_type = "album" );
 
-    for(let song in database){
-        song_container.innerHTML += ""
-    }
-    
-    let read_text_input = document.getElementById('search-text').addEventListener("input", ()=>
+search_area.addEventListener("input", ()=>{
+    result_area.innerHTML = "";
+    if (search_area.value === "" || !isAlphaNum( search_area.value.replace(" ", "") ))
     {
-        
-    });
-});/*===================GENERAL========================*/
-
-import databaseJSON from "../JS/database_JSON.js";
-
-document.addEventListener('DOMContentLoaded', function(){
-    let database = [];
-    fetch("../JS/database_JSON.js")
-    .then(response => response.json())
-    .then(response => {
-        if (!response.ok) throw new Error("No se pudo cargar el archivo");
-        return response.json();  // Convertimos a objeto JS
-    })
-    .then(data => {
-        database = data.canciones;
-    })
-    .catch(error => console.error("Error al cargar JSON:", error));
-
-    let song_container = document.getElementById("search_song_list");
-    song_container.innerHTML = "";
-
-    for(let song in database){
-        song_container.innerHTML += ""
+        show_all();
     }
-    
-    let search_result = document.getElementById('search_result');
+    else
+    {
+        let search_results = [];
+        for (let i = 0 ; i < song_list.length ; i++)
+        {
+            let element = song_list[i];
+            let search_value = search_area.value.toLowerCase();
+            if (element[sort_type].toLowerCase().indexOf(search_value) != -1 )
+            {
+                add_song_button(element, i, song_list.length-1);
+            }
+        }
+    }
+})
 
-    let read_text_input = document.getElementById('search-text').addEventListener("input", ()=>
-    {   
+// Muestra todos los botones
+function show_all()
+{
+    for (let i = 0; i < song_list.length ; i++){
+        add_song_button(song_list[i], i, song_list.length-1);
+    }
+}
+
+// Agrega las opciones al área de resultados
+function add_song_button(element, value_in_list, line_jump_limit){
+    result_area.innerHTML +=
+            `<button class="search_result_element"> \
+                <p class = "search_name_artist_font"><i>${element.nombre}</i> - ${element.artista}</p> \
+                <p class = "search_album_font">${element.album}<p> \
+            </button>`;
+        if (value_in_list < line_jump_limit)
+            result_area.innerHTML += "<br>";
+}
+
+function isAlphaNum(search_input)
+{
+    let regex = new RegExp("^[a-zA-Z0-9]+$");
+    return regex.test(search_input.toString());
+}
+
+const filter_buttons = document.querySelectorAll(".search_filter_button");
+filter_buttons.forEach(filter_button => {
+    filter_button.addEventListener("click", () => {
+        filter_buttons.forEach(b => b.classList.remove("active"));
+        filter_button.classList.add("active");
     });
 });

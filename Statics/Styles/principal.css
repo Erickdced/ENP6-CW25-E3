@@ -645,7 +645,7 @@ section {
     gap: 10px;
    
 }
-#search_button_container button
+.search_filter_button
 {
     flex: 1;
     font-family: "recomendaciones_font";
@@ -657,6 +657,12 @@ section {
     border: none;
     cursor: pointer;
     transition: 0.3s; 
+}
+
+.search_filter_button.active
+{
+    /* Favor de agregar diseño */
+    background-color: #e7a012;
 }
 
 #search_button_container button:hover 
