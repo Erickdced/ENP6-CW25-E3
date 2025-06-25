@@ -1,0 +1,63 @@
+<!--USER-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Statics/Styles/principal.css">
+    <title>Lapse-Usuario</title>
+</head>
+<body>
+    <header id="big_header">
+        <img id="big_header_bg" src="../Statics/Media/img/header_img.png">
+        <img href="../Statics/Media/img/estrellita_user.jpeg" id="user_img">
+
+        <div id="username_area">
+
+        </div>
+    </header>
+    <!---------------------------------------------->
+    <nav class="nav_style">
+        <div id="nav_playlist" class="nav_option">
+            <a class="nav_option_content" href="">
+                Mi playlist
+                <img class="nav_option_icon" href="">
+            </a>
+        </div>
+        <div id="nav_search" class="nav_option">
+            <a class="nav_option_content" href="">
+                Búsqueda
+                <img class="nav_option_icon" href="">
+            </a>
+        </div>
+    </nav>
+
+    <!---------------------------------------------------------------->
+   
+    <section id="user_config_buttons">
+        <button id="changeNameBtn" class="user_config_btn">Cambiar nombre</button>
+        <button id="changeFaceBtn" class="user_config_btn">Cambiar cara</button>
+    </section>
+
+    <!------------------------------------------------------------------>
+    <footer id="footer_user">
+        <div id="reproductor_principal_wrapper">
+            <div id="infoReproductor">
+                <p class="Name">Tu Rolita</p>
+                <p class="Artist">Artista</p>
+                <img src="../Statics/Media/img/progress.png" class="progress-bar-img">
+                <div id="botones">
+                    <img id="previo" src="../Statics/Media/img/back (1).png">
+                    <img id="play" src="../Statics/Media/img/play.png">
+                    <img id="siguiente" src="../Statics/Media/img/next.png">
+                </div>
+            </div>
+            <iframe video="cancionActual"></iframe> 
+        </div>
+    </footer>
+
+    <script src="../Dynamics/JS/lapse_cookies.js"></script>
+    <script src="../Dynamics/JS/user_page.js"></script>
+
+</body>
+</html>

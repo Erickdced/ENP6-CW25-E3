@@ -1,17 +1,18 @@
 <!--PLAYLIST-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../Statics/Styles/principal.css">
+    <title>Lapse Playlist</title>
 </head>
 <body>
-    <header>
-        <img href="">
-        Lapse
+    <header class="small_header">
+       <h1 class="header_text">Lapse</h1>
     </header>
-    <nav>
+
+    <nav id="playlist_nav">
         <div id="nav_user" class="nav_option">
             <a class="nav_option_content" href="">
                 Mi Usuario
@@ -26,54 +27,57 @@
         </div>
     </nav>
     <hr class="nav_line">
+    <div class="main_container">
     <section>
-        <div id="info_list_headers">
+        <div id="info_list_headers" class="nav_option">
             <span>Canción</span>
             <span>Artista</span>
             <span>Álbum</span>
         </div>
         <div id="playlist_container">
             <div class="playlist_song">
-                <div>
-                    <img class="playlist_song_img">
-                    <span>Nombre</span>
+                <div class="background_song_image">
+                    <img class="playlist_song_img" href="">
                 </div>
+                <span>Nombre</span>
                 <span>Artista</span>
                 <span>Álbum</span>
             </div>
             <div class="playlist_song">
-                <div>
+                <div class="background_song_image">
                     <img class="playlist_song_img">
-                    <span>Nombre</span>
                 </div>
+                <span>Nombre</span>
                 <span>Artista</span>
                 <span>Álbum</span>
             </div>
             <div class="playlist_song">
-                <div>
+                <div class="background_song_image">
                     <img class="playlist_song_img">
-                    <span>Nombre</span>
                 </div>
+                <span>Nombre</span>
                 <span>Artista</span>
                 <span>Álbum</span>
             </div>
         </div>
     </section>
     <aside class="player_aside">
-        <div id="player">
+        <div id="repr">
             <iframe class="player_video" video="cancionActual"></iframe>
-            <div id="player_info">
+            <div class="player_infoReproductor">
                 <p class="player_song_name">Tu Rolita</p>
                 <p class="player_artist_name">Artista</p>
-                <img class="player_bar" href="barra">
-                <div id="player_button_container">
-                    <img id="player_previous_Btn" class="player_btn">
-                    <img id="player_play_Pause_Btn" class="player_btn">
-                    <img id="player_next_Btn" class="player_btn">
+                <img class="player_bar" src="../Statics/Media/img/progress.png">
+                <div class="player_button_container">
+                    <img id="player_previous_Btn" class="player_btn" src="../Statics/Media/img/back (1).png">
+                    <img id="player_play_Pause_Btn" class="player_btn" src="../Statics/Media/img/play.png">
+                    <img id="player_next_Btn" class="player_btn" src="../Statics/Media/img/next.png">
+                    
                 </div>
             </div>
         </div>
-        <img class="lapsy" href="estrella">
+        <img src="../Statics/Media/img/estrellita.png" class="lapsy">
     </aside>
+    </div>
 </body>
 </html>
