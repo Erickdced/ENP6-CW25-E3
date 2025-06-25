@@ -286,31 +286,51 @@ const baseDatosJSON = {
 };
 const listCanc=baseDatosJSON
 let colaRepro=[];
-function SelecCancionId(idCancion)
+//obtener cancion por id
+function SeleccancionId(idCancion)
 {
+    //encontrar el primer elemento que tenga el id solicitado
     return listCanc.canciones.find(cancion=>cancion.id===idCancion);
 }
+//checar si una cancion ya pertenece a la cola
 function enCola(idCancion)
 {
+    //checa si algun elemento tiene la id
     return colaRepro.some(cancion => cancion.id === idCancion);
 }
-function alternaCancion(idCancion)
+//agrega o elimina una cancion en la cola
+function alternarCancCola(idCancion)
 {
   if(enCola(idCancion))
   {
-    colaRepro.filter(cancion =>cancion.id !== idCancion);
-    console.log(`La Cancion con el Id ${idCancion} ha sido eliminada de la cola`)
-  }else
+    //creacion de un arreglo que cumple con la condicion que puse
+    colaRepro=colaRepro.filter(cancion => cancion.id !==idCancion);
+    console.log(`la cancion cuyo ID es ${idCancion} ha sido eliminada de la cola`);
+  }
+  else
   {
-  const Canc = ObtenerCancionId(idCancion)
-    if(Canc)
+    const canc=SeleccancionId(idCancion);
+    if(canc)
     {
-      colaRepro.push(Canc);
-      console.log(`Cancion cuyo Id es ${idCancion} ha sido agregada a la cola`)
-
-    }else
+      //agregar un elemento al final del arreglo
+      colaRepro.push(canc);
+      console.log(`Cancion '${canc.nombre}' ha sido agregada a la cola`);
+    }
+    else
     {
+      //mensaje de advertencia
       console.warn("Cancion no encontrada");
     }
   }
+  console.log("Cola actual:",colaRepro);
 }
+//vincular los botones
+document.querySelectorAll(".btn-cancion").forEach(boton =>
+{
+  boton.addEventListener("click",()=>
+  {
+    //convertir cadena en entero
+    const idCancion=parseInt(boton.dataset.id,10);
+    alternarCancCola(idCancion);
+  });
+});
