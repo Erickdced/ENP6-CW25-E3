@@ -498,18 +498,17 @@ footer
     top:0;
     left:0;
 }
-.header_text_user
+#header_text_user
 {
     position: absolute; 
     top:13%; 
-    left:36%; 
+    left:43%; 
     color:#FFFF; 
     font-size: 4.5vw;
     text-shadow: 2px 2px 4px #000; 
     margin: 0; 
     padding: 0;
     font-family: "nav_font";
-    
 }
 #user_img
 {
