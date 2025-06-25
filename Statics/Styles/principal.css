@@ -328,7 +328,7 @@ body
     padding: 0; 
     width: 100%;
     box-sizing: border-box; 
-    padding-bottom: 70px
+    padding-bottom: 10px
 }
 
 
@@ -355,7 +355,6 @@ body
 {
     display:flex; 
     flex-wrap:wrap; 
-    justify-content: center;
     justify-content: space-evenly;
 }
 
@@ -393,8 +392,7 @@ body
 footer 
 {
     position: fixed;
-    width: 60%;
-    height: 150px;
+    
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -404,8 +402,8 @@ footer
 
 .estrellita 
 {
-    width: 25vw; 
-    height:25vh;
+    min-width: 10vw; 
+    min-height:10vh;
 }
 
 
@@ -413,10 +411,10 @@ footer
 {
     display:flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-grow: 1;
-    max-width:55vw;
-    height:23vh;
+    width: 40vw;
+    height:26vh;
     background-color: #D9D9D9; 
     border: 3px solid #131111; 
     border-radius: 10px; 
@@ -483,13 +481,10 @@ footer
     margin-top: 8px;
 }
 
-
-iframe 
-{
-    width:13vw; 
-    height:18vh;
-    border-radius: 8px; 
-    background-color: #FFD580;
+#player {
+    width: 20vw;
+    max-width: 20vw;
+    height: 23vh;
 }
 /*====================================================================================================================================*/
 /*USUARIO*/
@@ -542,6 +537,7 @@ iframe
     display: flex; 
     justify-content: space-evenly; 
     margin: 1vw;
+    flex-direction: row;
 }
 
 .user_config_btn 
