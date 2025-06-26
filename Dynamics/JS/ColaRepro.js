@@ -316,7 +316,14 @@ function alternarCancCola(idCancion) {
     }
     console.log("Cola actual:", colaRepro);
 }
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function () {
+=======
+<<<<<<< HEAD
+document.addEventListener("DOMContentLoaded", function () {
+  const playlistContainer = document.getElementById("playlist_container");
+
+>>>>>>> 738444980f9ce8aab0bd8c546ad84a00daac48b6
   baseDatosJSON.canciones.forEach(cancion => {
     const artista = baseDatosJSON.artistas.find(a => a.id === cancion.id_artista);
     const album = baseDatosJSON.album.find(a => a.id === cancion.id_album);
@@ -333,6 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <span>${cancion.album}</span>
       <button class="btn-cancion" data-id="${cancion.id}">🎵</button>
     `;
+<<<<<<< HEAD
     const playlistContainer = document.getElementById("playlist_container");
     playlistContainer.appendChild(div);
   });
@@ -344,3 +352,24 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+=======
+
+    playlistContainer.appendChild(div);
+  });
+=======
+>>>>>>> 942bb5cc673ebad36fb9361bfd856ee10671cea1
+//vincular los botones
+document.querySelectorAll(".btn-cancion").forEach(boton =>
+{
+  boton.addEventListener("click",()=>
+  {
+    //convertir cadena en entero
+    const idCancion=parseInt(boton.dataset.id,10);
+    alternarCancCola(idCancion);
+  });
+<<<<<<< HEAD
+});
+=======
+});
+>>>>>>> 942bb5cc673ebad36fb9361bfd856ee10671cea1
+>>>>>>> 738444980f9ce8aab0bd8c546ad84a00daac48b6
