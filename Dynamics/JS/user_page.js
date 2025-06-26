@@ -4,7 +4,7 @@ const button_mod_picture = document.getElementById('changeFaceBtn');
 const display_user_picture = document.getElementById('user_pfp_area');
 const display_username = document.getElementById('header_text_user');
 
-/*=======================================Config User==============================*/
+/*========================================Config User==============================*/
 function configUserPicture(picture_id)
 {   
     
