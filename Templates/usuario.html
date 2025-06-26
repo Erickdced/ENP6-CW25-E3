@@ -1,0 +1,78 @@
+<!--USER-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Statics/Styles/principal.css">
+    <title>Lapse-Usuario</title>
+</head>
+<body>
+    <header id="big_header">
+        <img id="big_header_bg" src="../Statics/Media/img/header_img.png">
+        
+        <div id="user_pfp_area">
+            <img src="../Statics/Media/img/estrellita_style_1.png" id="user_img">
+        </div>
+
+        <h1 id="header_text_user">Nombre del Usuario</h1>
+    </header>
+    <!---------------------------------------------->
+    <nav class="nav_style">
+        <div id="nav_playlist" class="nav_option">
+            <a class="nav_option_content" href="playlist_page.html">
+                Mi playlist
+                <img class="nav_option_icon" href="">
+            </a>
+        </div>
+        <div id="nav_search" class="nav_option">
+            <a class="nav_option_content" href="search_page.html">
+                Búsqueda
+                <img class="nav_option_icon" href="">
+            </a>
+        </div>
+    </nav>
+
+    <!-------------------------------ATENCION ACÁ--------------------------------->
+    <section id="user_config_buttons">
+        <button id="changeNameBtn" class="user_config_btn">Cambiar nombre</button>
+        <input type="text" id="changeNameInput" placeholder="Nuevo Nombre" style="display: none">
+
+        <button id="changeFaceBtn" class="user_config_btn">Cambiar cara</button>
+        <input type="text" id="changeFaceInput" style="display: none">
+    </section>
+
+    <!------------------------------------------------------------------>
+    <footer id="footer_user">
+        <img src="../Statics/Media/img/estrellita.png" class="estrellita">
+        <div id="reproductor_principal_wrapper">
+            <div id="infoReproductor">
+                <p class="Name"></p>
+                <p class="Artist"></p>
+                <div class="progress-container">
+                    <span id="currentTime">0:00</span>
+                    <input type="range" id="seekBar" value="0" step="1">
+                    <span id="duration">0:00</span>
+                </div>
+                <div id="botones">
+                    <img id="previo" src="../Statics/Media/img/back (1).png" alt="Anterior">
+                    <img id="play" src="../Statics/Media/img/play.png" alt="Reproducir/Pausar">
+                    <img id="siguiente" src="../Statics/Media/img/next.png" alt="Siguiente">
+
+                    <button id="muteBtn">🔊</button>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="100">
+                </div>
+            </div>
+            <div id="player"></div>
+        </div>
+    </footer>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="../Dynamics/JS/database_JSON.js"></script>
+    <script src="../Dynamics/JS/reproductor.js"></script>
+
+    <script src="../Dynamics/JS/lapse_cookies.js"></script>
+    <script src="../Dynamics/JS/user_page.js"></script>
+
+</body>
+</html>

@@ -236,7 +236,7 @@ body
     height: auto;
     
 }
-/*..............................................................................................................................................*/
+/*........========================================================================================...*/
 /*PRINCIPAL*/
 .small_header 
 {
@@ -295,23 +295,14 @@ body
 { 
     display: flex; 
     flex-direction: row;
-    justify-content: space-evenly; 
+    justify-content: space-around; 
     align-items: center; 
     width:100%; 
     padding:10px 0; 
     box-sizing:border-box; 
     flex-wrap: wrap;
 }
-.nav_button a
-{
-    text-decoration: none; 
-    color:#0e0d0d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "nav_font";
-    font-size:30px;
-}
+
 
 
 .nav_line 
@@ -328,7 +319,7 @@ body
     padding: 0; 
     width: 100%;
     box-sizing: border-box; 
-    padding-bottom: 70px
+    padding-bottom: 10px
 }
 
 
@@ -355,7 +346,6 @@ body
 {
     display:flex; 
     flex-wrap:wrap; 
-    justify-content: center;
     justify-content: space-evenly;
 }
 
@@ -377,7 +367,8 @@ body
 .home_song_square:hover 
 {
     background-color: #FFC247; 
-    border: 3px solid #131111; 
+    outline: 3px solid #131111;
+    transform: scale(1.075);
 }
 
 .home_song_square img 
@@ -392,8 +383,7 @@ body
 footer 
 {
     position: fixed;
-    width: 60%;
-    height: 150px;
+    
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -403,8 +393,8 @@ footer
 
 .estrellita 
 {
-    width: 25vw; 
-    height:25vh;
+    min-width: 10vw; 
+    min-height:10vh;
 }
 
 
@@ -412,10 +402,10 @@ footer
 {
     display:flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-grow: 1;
-    max-width:55vw;
-    height:23vh;
+    width: 40vw;
+    height:26vh;
     background-color: #D9D9D9; 
     border: 3px solid #131111; 
     border-radius: 10px; 
@@ -482,13 +472,10 @@ footer
     margin-top: 8px;
 }
 
-
-iframe 
-{
-    width:13vw; 
-    height:18vh;
-    border-radius: 8px; 
-    background-color: #FFD580;
+#player {
+    width: 20vw;
+    max-width: 20vw;
+    height: 23vh;
 }
 /*====================================================================================================================================*/
 /*USUARIO*/
@@ -511,18 +498,17 @@ iframe
     top:0;
     left:0;
 }
-.header_text_user
+#header_text_user
 {
     position: absolute; 
     top:13%; 
-    left:36%; 
+    left:43%; 
     color:#FFFF; 
     font-size: 4.5vw;
     text-shadow: 2px 2px 4px #000; 
     margin: 0; 
     padding: 0;
     font-family: "nav_font";
-    
 }
 #user_img
 {
@@ -541,6 +527,7 @@ iframe
     display: flex; 
     justify-content: space-evenly; 
     margin: 1vw;
+    flex-direction: row;
 }
 
 .user_config_btn 
@@ -600,6 +587,11 @@ iframe
 .nav_option{
     font-family: "carattere";
     color:#28063a;
+    font-size: 40px;
+}
+.nav_option:hover
+{
+    transform: scale(1.25);
     font-size: 50px;
 }
 
@@ -619,7 +611,19 @@ section {
     display: flex;
     justify-content: center;
 }
+#changeNameInput 
+{
+    width: 30%;
+    max-width: 30%;
+    display: flex;
+    justify-content: center;
 
+    
+    background-color: #f9e5be;
+    font-family: "kapakana";
+    font-size: 36px;
+    border-radius: 3px;
+}
 #search_input input[type="text"] 
 {
     background-color: #f9e5be;
@@ -631,7 +635,6 @@ section {
     border: 2px solid #000;
     
 }
-
 #search_input input[type="text"]::placeholder 
 {
     color: #000000;
@@ -648,7 +651,7 @@ section {
     gap: 10px;
    
 }
-#search_button_container button
+.search_filter_button
 {
     flex: 1;
     font-family: "recomendaciones_font";
@@ -662,27 +665,50 @@ section {
     transition: 0.3s; 
 }
 
+.search_filter_button.active
+{
+    /* Favor de agregar diseño */
+    background-color: #e7a012;
+}
+
 #search_button_container button:hover 
 {
     background-color: #FFC247; 
     border: 2px solid #000; 
 }
 
-.search_song_name 
+
+
+.search_result_element
 {
-    font-family: "carattere";
-    font-size: 25px;
-    background-color: #f9e5be;
-    border: 1px solid #131111;
+    background-color:#bfb7c4;
     border-radius: 10px;
     width: 100%;
-    padding: 15px 20px;
+    height: 8%;
+    padding: 15px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #131111;
     box-sizing: border-box;
 }
+
+.search_result_element:hover
+{
+    background-color: #FEFAAD;
+}
+
+.search_name_artist_font
+{
+    font-family: "Name_song";
+    font-size: 2.5vw;
+
+}
+.search_album_font
+{
+    font-family: "Name_artist";
+    font-size: 1.5vw;
+}
+
 
 #player{
     display: flex;
@@ -693,7 +719,7 @@ section {
 }
 
 .player_aside {
-    width: 300px;
+    width: 400px;
     height: 800px;
     background-color: #D9D9D9;
     border: 3px solid #131111;
@@ -712,6 +738,7 @@ section {
     align-items: center;
     flex-grow: 1;
     margin-right: 15px;
+    min-width: 150px;
     min-width: 0;
     padding: 0; 
 }
@@ -721,42 +748,11 @@ section {
     height: 200px;
     background-color: #FFC247;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     border: none;
 }
 
-.player_song_name {
-    font-family: "Name_song";
-    font-size: 30px;
-    text-align: center;
-}
 
-.player_artist_name {
-    font-family: "Name_artist";
-    font-size: 20px;
-    text-align: center;
-}
-
-.player_bar {
-    width: 100%;
-    max-width: 220px;
-    height: 8px;
-    background-color: #131111;
-    margin: 10px 0;
-    border-radius: 4px;
-}
-
-.player_button_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.player_btn {
-    width: 30px;
-    height: 30px;
-}
 
 .lapsy {
     width: 100px;
@@ -764,7 +760,7 @@ section {
     margin-top: 10px;
 }
 
-/*-----------------------------------------------------------------------------------------------*/
+/*-============================================================================================*/
 /*PLAYLIST*/
 #playlist_nav{ 
     display: flex; 
@@ -802,6 +798,7 @@ section {
     align-items: center;
     color: #131111;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .playlist_song {
@@ -812,7 +809,9 @@ section {
     margin-bottom: 10px;
     border-radius: 10px;
     gap: 15px;
+    cursor:pointer;
 }
+
 
 .background_song_image {
     width: 60px;
@@ -846,4 +845,13 @@ section {
 
 #playlist_container{
     background-color: #ebebf9;
+    cursor: pointer;
+}
+#playlist_container .playlist_song:nth-child(odd):hover
+{
+    background-color: #FFC247;
+}
+#playlist_container .playlist_song:nth-child(even):hover
+{
+    background-color: #FFC247;
 }
