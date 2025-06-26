@@ -301,10 +301,13 @@ function enCola(idCancion)
 }
 //agrega o elimina una cancion en la cola
 function alternarCancCola(idCancion) {
-    if (enCola(idCancion)) {
+    if (enCola(idCancion))
+    {
+      //quitar cancion de cola
         colaRepro = colaRepro.filter(cancion => cancion.id !== idCancion);
         console.log(`La canción ${idCancion} ha sido eliminada de la cola`);
-    } else {
+    } else 
+      { //poner cancion en cola
         const canc = SeleccancionId(idCancion);
         if (canc) {
             colaRepro.push(canc);
