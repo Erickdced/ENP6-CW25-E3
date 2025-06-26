@@ -45,7 +45,7 @@ function show_all()
 // Agrega las opciones al área de resultados
 function add_song_button(element, value_in_list, line_jump_limit){
     result_area.innerHTML +=
-            `<button class="search_result_element"> \
+            `<button class="search_result_element" onclick="song_search(${value_in_list})"> \
                 <p class = "search_name_artist_font"><i>${element.nombre}</i> - ${element.artista}</p> \
                 <p class = "search_album_font">${element.album}<p> \
             </button>`;

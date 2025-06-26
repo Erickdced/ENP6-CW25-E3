@@ -33,8 +33,8 @@ function onYouTubeIframeAPIReady()
         videoId: colaRepro[i].link,
         playerVars: 
         {
-            controls: 0,
-            autoplay: 0
+            controls:0,
+            autoplay:0
         },
         events: 
         {
@@ -192,6 +192,16 @@ function seekBarBtn()
     player.seekTo(seekTo,true); 
 }
 
+
+function song_search(index) 
+{
+    i=index; 
+    songInfo(); 
+    if (!isPlaying) 
+    { 
+        player.playVideo();
+    }
+}
 next.addEventListener("click",nextBtn);
 back.addEventListener("click",backBtn);
 play.addEventListener("click",playBtn);
@@ -200,4 +210,4 @@ mute.addEventListener("click",muteBtn);
 seekBar.addEventListener("input",seekBarBtn);
 
 
-document.addEventListener("DOMContentLoaded", songInfo);
+document.addEventListener("DOMContentLoaded", songInfo);reproductor
