@@ -22,7 +22,7 @@ function onYouTubeIframeAPIReady()
 {
     player=new YT.Player("player", 
     {
-        videoId:databaseJSON.canciones[i].link,
+        videoId:colaRepro[i].link,
         playerVars: 
         {
             controls:0,

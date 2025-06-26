@@ -299,31 +299,65 @@ function enCola(idCancion)
     return colaRepro.some(cancion => cancion.id === idCancion);
 }
 //agrega o elimina una cancion en la cola
-function alternarCancCola(idCancion)
-{
-  if(enCola(idCancion))
-  {
-    //creacion de un arreglo que cumple con la condicion que puse
-    colaRepro=colaRepro.filter(cancion => cancion.id !==idCancion);
-    console.log(`la cancion cuyo ID es ${idCancion} ha sido eliminada de la cola`);
-  }
-  else
-  {
-    const canc=SeleccancionId(idCancion);
-    if(canc)
-    {
-      //agregar un elemento al final del arreglo
-      colaRepro.push(canc);
-      console.log(`Cancion '${canc.nombre}' ha sido agregada a la cola`);
+function alternarCancCola(idCancion) {
+    if (enCola(idCancion)) {
+        colaRepro = colaRepro.filter(cancion => cancion.id !== idCancion);
+        console.log(`La canción ${idCancion} ha sido eliminada de la cola`);
+    } else {
+        const canc = SeleccancionId(idCancion);
+        if (canc) {
+            colaRepro.push(canc);
+            console.log(`Canción ${canc.nombre} ha sido agregada a la cola`);
+            i = colaRepro.length - 1;  // Actualizacion del índice para que apunte a la última canción agregada
+            songInfo();  // Actualizacion de la información del reproductor
+        } else {
+            console.warn("Canción no encontrada");
+        }
     }
-    else
-    {
-      //mensaje de advertencia
-      console.warn("Cancion no encontrada");
-    }
-  }
-  console.log("Cola actual:",colaRepro);
+    console.log("Cola actual:", colaRepro);
 }
+<<<<<<< HEAD
+document.addEventListener("DOMContentLoaded", function () {
+=======
+<<<<<<< HEAD
+document.addEventListener("DOMContentLoaded", function () {
+  const playlistContainer = document.getElementById("playlist_container");
+
+>>>>>>> 738444980f9ce8aab0bd8c546ad84a00daac48b6
+  baseDatosJSON.canciones.forEach(cancion => {
+    const artista = baseDatosJSON.artistas.find(a => a.id === cancion.id_artista);
+    const album = baseDatosJSON.album.find(a => a.id === cancion.id_album);
+
+    const div = document.createElement("div");
+    div.classList.add("playlist_song");
+
+    div.innerHTML = `
+      <div class="background_song_image">
+        <img class="playlist_song_img" src="${album ? album.url_img : ''}" alt="${cancion.nombre}">
+      </div>
+      <span>${cancion.nombre}</span>
+      <span>${cancion.artista}</span>
+      <span>${cancion.album}</span>
+      <button class="btn-cancion" data-id="${cancion.id}">🎵</button>
+    `;
+<<<<<<< HEAD
+    const playlistContainer = document.getElementById("playlist_container");
+    playlistContainer.appendChild(div);
+  });
+  document.querySelectorAll(".btn-cancion").forEach(boton => {
+    boton.addEventListener("click", () => {
+      const idCancion = parseInt(boton.dataset.id, 10);
+      alternarCancCola(idCancion);
+    });
+  });
+});
+
+=======
+
+    playlistContainer.appendChild(div);
+  });
+=======
+>>>>>>> 942bb5cc673ebad36fb9361bfd856ee10671cea1
 //vincular los botones
 document.querySelectorAll(".btn-cancion").forEach(boton =>
 {
@@ -333,4 +367,9 @@ document.querySelectorAll(".btn-cancion").forEach(boton =>
     const idCancion=parseInt(boton.dataset.id,10);
     alternarCancCola(idCancion);
   });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 942bb5cc673ebad36fb9361bfd856ee10671cea1
+>>>>>>> 738444980f9ce8aab0bd8c546ad84a00daac48b6
