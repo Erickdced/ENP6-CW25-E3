@@ -18,24 +18,31 @@ let i=0;
 let isPlaying =false; 
 
 
-function onYouTubeIframeAPIReady() 
+function onYouTubeIframeAPIReady()
 {
-    player=new YT.Player("player", 
+    if (colaRepro.length === 0)
     {
-        videoId:colaRepro[i].link,
+        const playerContainer = document.getElementById("player");
+        playerContainer.innerHTML = "<p style='color:white; text-align:center;'>No hay canciones en la cola.<br>Agrega una canción para comenzar.</p>";
+        console.warn("Cola vacía: agrega canciones para iniciar el reproductor.");
+        return;
+    }
+
+    player = new YT.Player("player", 
+        {
+        videoId: colaRepro[i].link,
         playerVars: 
         {
-            controls:0,
-            autoplay:0
+            controls: 0,
+            autoplay: 0
         },
         events: 
         {
-            onReady:onPlayerReady,
-            onStateChange:onPlayerStateChange
+            onReady: onPlayerReady,
+            onStateChange: onPlayerStateChange
         }
     });
 }
-
 
 function onPlayerReady() 
 {
@@ -88,11 +95,13 @@ function onPlayerStateChange(event)
 
 function ciclo(index) 
 {
+    if(colaRepro.length===0)
+        return;
     if (index<0) 
     {
-        index= databaseJSON.canciones.length-1;
+        index= colaRepro.length-1;
     }
-    if (index>= databaseJSON.canciones.length) 
+    if (index>= colaRepro.length) 
     {
         index=0;
     }
@@ -114,7 +123,9 @@ function ciclo(index)
 
 function songInfo() 
 {
-    const song=databaseJSON.canciones[i];
+    const song=colaRepro[i];
+    if(!song)
+        return;
     names.textContent=song.nombre;
     artist.textContent= song.artista;
     player.loadVideoById(song.link); 
@@ -189,4 +200,4 @@ mute.addEventListener("click",muteBtn);
 seekBar.addEventListener("input",seekBarBtn);
 
 
-document.addEventListener("DOMContentLoaded", songInfo);reproductor
+document.addEventListener("DOMContentLoaded", songInfo);
