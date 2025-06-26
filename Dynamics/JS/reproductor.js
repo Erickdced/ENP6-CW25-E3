@@ -251,4 +251,4 @@ function get_player_cookies() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", songInfo);reproductor
+document.addEventListener("DOMContentLoaded", songInfo);
