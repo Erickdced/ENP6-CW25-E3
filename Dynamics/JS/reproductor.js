@@ -11,11 +11,11 @@ const next = document.getElementById("siguiente");
 const volSlider= document.getElementById("volumeSlider");
 const mute= document.getElementById("muteBtn");
 const seekBar= document.getElementById("seekBar");
-const currentTime =document.getElementById("currentTime");
-const time= document.getElementById("duration");
+const currentTime = document.getElementById("currentTime");
+const time = document.getElementById("duration");
 
 let i=0; 
-let isPlaying =false; 
+let isPlaying = false; 
 
 
 function onYouTubeIframeAPIReady()
@@ -50,7 +50,7 @@ function onPlayerReady()
     volSlider.value =lastVolume;
     duration =player.getDuration();
     seekBar.max=duration;
-    time.textContent =formatTime(duration); 
+    time.textContent = formatTime(duration); 
     songInfo(); 
 
     interval =setInterval(seekBar_volume, 1000);
@@ -61,12 +61,12 @@ function seekBar_volume()
 {
     if (player.getPlayerState()===YT.PlayerState.PLAYING) 
     {
-        let t =player.getCurrentTime();
-        seekBar.value=t;
-        currentTime.textContent=formatTime(t);
+        let t = player.getCurrentTime();
+        seekBar.value = t;
+        currentTime.textContent = formatTime(t);
     }
 
-    let vol= player.getVolume();
+    let vol = player.getVolume();
     if (vol!==lastVolume) 
     {
         volSlider.value=vol;
@@ -83,8 +83,8 @@ function onPlayerStateChange(event)
         isPlaying=true;
         play.src= "../Statics/Media/img/pause.btn.png";
         duration=player.getDuration(); 
-        seekBar.max=duration;
-        time.textContent =formatTime(duration);
+        seekBar.max = duration;
+        time.textContent = (duration);
     } 
     else 
     {
@@ -117,7 +117,7 @@ function ciclo(index)
     {
         duration=player.getDuration();
         seekBar.max=duration;
-        time.textContent= formatTime(duration);
+        time.textContent = formatTime(duration);
     }
 }
 
@@ -202,6 +202,8 @@ function song_search(index)
         player.playVideo();
     }
 }
+
+
 next.addEventListener("click",nextBtn);
 back.addEventListener("click",backBtn);
 play.addEventListener("click",playBtn);
@@ -210,4 +212,43 @@ mute.addEventListener("click",muteBtn);
 seekBar.addEventListener("input",seekBarBtn);
 
 
-document.addEventListener("DOMContentLoaded", songInfo);reproductor
+function set_player_cookies() {
+    // canción = i
+    setCookie("song_number", i, 100);
+    // segundo = seekBar.value
+    setCookie("second", seekBar.value, 100);
+    // play = isPlaying
+    setCookie("isPlaying", player.getPlayerState() === YT.PlayerState.PLAYING, 100);
+    // volumen = volSlider.value
+    setCookie("volume", volSlider.value, 100);
+    // muteado = player.isMuted()
+    setCookie("muted", player.isMuted(), 100);
+}
+
+function get_player_cookies() {
+    try {
+        currentSecond = getCookie("second");
+        playPause = getCookie("isPlaying");
+        volume = getCookie("volume");
+
+        i = getCookie("song_number");
+
+        player.seekTo(currentSecond,true);
+        seekBar.value = currentSecond;
+        currentTime.textContent = formatTime(currentSecond);
+
+        isPlaying = playPause;
+
+        volSlider.value = volume;
+        player.setVolume(volume);
+
+        if (getCookie("muted"))
+            player.mute();
+
+    }
+    catch (error){
+
+    }
+}
+
+document.addEventListener("DOMContentLoaded", songInfo);
