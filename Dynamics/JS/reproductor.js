@@ -189,4 +189,4 @@ mute.addEventListener("click",muteBtn);
 seekBar.addEventListener("input",seekBarBtn);
 
 
-document.addEventListener("DOMContentLoaded", songInfo);
+document.addEventListener("DOMContentLoaded", songInfo);reproductor
