@@ -22,7 +22,7 @@ function onYouTubeIframeAPIReady()
 {
     player=new YT.Player("player", 
     {
-        videoId:colaRepro[i].link,
+        videoId:databaseJSON.canciones[i].link,
         playerVars: 
         {
             controls:0,
@@ -181,6 +181,16 @@ function seekBarBtn()
     player.seekTo(seekTo,true); 
 }
 
+
+function song_search(index) 
+{
+    i=index; 
+    songInfo(); 
+    if (!isPlaying) 
+    { 
+        player.playVideo();
+    }
+}
 next.addEventListener("click",nextBtn);
 back.addEventListener("click",backBtn);
 play.addEventListener("click",playBtn);
@@ -189,4 +199,4 @@ mute.addEventListener("click",muteBtn);
 seekBar.addEventListener("input",seekBarBtn);
 
 
-document.addEventListener("DOMContentLoaded", songInfo);reproductor
+document.addEventListener("DOMContentLoaded", songInfo);
