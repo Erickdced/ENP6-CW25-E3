@@ -66,7 +66,7 @@ login_form.addEventListener("submit", function(event){
     setCookie("username", name_text, 7);
     setCookie("email", mail_text, 7);
     setCookie("password", pswd_text, 7);
-
+    setCookie("pfp_id", 0, 7);
     /*========================================SENDING TO HOME============================*/
     window.location.href = "home_page.html";
 });
