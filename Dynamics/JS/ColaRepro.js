@@ -295,6 +295,7 @@ function SeleccancionId(idCancion)
 //checar si una cancion ya pertenece a la cola
 function enCola(idCancion)
 {
+  
     //checa si algun elemento tiene la id
     return colaRepro.some(cancion => cancion.id === idCancion);
 }
@@ -359,4 +360,5 @@ document.addEventListener("DOMContentLoaded", function () {
       const estaEnCola = enCola(idCancion);
       boton.textContent = estaEnCola ? "❌" : "🎵";
     });
+});
 });
