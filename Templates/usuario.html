@@ -10,9 +10,12 @@
 <body>
     <header id="big_header">
         <img id="big_header_bg" src="../Statics/Media/img/header_img.png">
-        <img src="../Statics/Media/img/estrellita_style_1.png" id="user_img">
-        <h1 id="header_text_user">Nombre del Usuario</h1>
         
+        <div id="user_pfp_area">
+            <img src="../Statics/Media/img/estrellita_style_1.png" id="user_img">
+        </div>
+
+        <h1 id="header_text_user">Nombre del Usuario</h1>
     </header>
     <!---------------------------------------------->
     <nav class="nav_style">
@@ -30,11 +33,13 @@
         </div>
     </nav>
 
-    <!---------------------------------------------------------------->
-   
+    <!-------------------------------ATENCION ACÁ--------------------------------->
     <section id="user_config_buttons">
         <button id="changeNameBtn" class="user_config_btn">Cambiar nombre</button>
+        <input type="text" id="changeNameInput" placeholder="Nuevo Nombre" style="display: none">
+
         <button id="changeFaceBtn" class="user_config_btn">Cambiar cara</button>
+        <input type="text" id="changeFaceInput" style="display: none">
     </section>
 
     <!------------------------------------------------------------------>

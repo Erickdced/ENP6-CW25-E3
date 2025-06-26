@@ -367,8 +367,8 @@ body
 .home_song_square:hover 
 {
     background-color: #FFC247; 
-    border: 3px solid #131111; 
-    
+    outline: 3px solid #131111;
+    transform: scale(1.075);
 }
 
 .home_song_square img 
@@ -591,6 +591,7 @@ footer
 }
 .nav_option:hover
 {
+    transform: scale(1.25);
     font-size: 50px;
 }
 
@@ -610,7 +611,19 @@ section {
     display: flex;
     justify-content: center;
 }
+#changeNameInput 
+{
+    width: 30%;
+    max-width: 30%;
+    display: flex;
+    justify-content: center;
 
+    
+    background-color: #f9e5be;
+    font-family: "kapakana";
+    font-size: 36px;
+    border-radius: 3px;
+}
 #search_input input[type="text"] 
 {
     background-color: #f9e5be;
@@ -622,7 +635,6 @@ section {
     border: 2px solid #000;
     
 }
-
 #search_input input[type="text"]::placeholder 
 {
     color: #000000;
