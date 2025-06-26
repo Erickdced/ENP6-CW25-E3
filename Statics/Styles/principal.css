@@ -782,6 +782,11 @@ section {
     margin-bottom: 10px;
     border-radius: 10px;
     gap: 15px;
+    cursor:pointer;
+}
+.playlist_song:hover
+{
+    background-color: #7B6F83;
 }
 
 .background_song_image {
