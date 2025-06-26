@@ -25,7 +25,8 @@ function onYouTubeIframeAPIReady ()
         playerVars: 
         {
             controls:0,
-            autoplay:0
+            autoplay:1,
+            mute:1
         },
         events:
         {
@@ -160,4 +161,7 @@ seekBar.addEventListener("input", ()=> {
 
 });
 
-document.addEventListener("DOMContentLoaded", () => updateInfo());
+document.addEventListener("DOMContentLoaded", () => {
+    updateInfo();
+    sugerirCanciones();
+});
