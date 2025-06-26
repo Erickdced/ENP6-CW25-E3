@@ -3,161 +3,190 @@ let duration = 0;
 let lastVolume = 100;
 let interval;
 
-const name= document.querySelector(".Name");
-const artist = document.querySelector(".Artist");
-const back = document.getElementById("previo");
+const names= document.querySelector(".Name");
+const artist= document.querySelector(".Artist");
+const back= document.getElementById("previo");
 const play = document.getElementById("play");
 const next = document.getElementById("siguiente");
-const volSlider = document.getElementById("volumeSlider");
-const mute = document.getElementById("muteBtn");
-const seekBar = document.getElementById("seekBar");
-const currentTime = document.getElementById("currentTime");
-const time = document.getElementById("duration");
+const volSlider= document.getElementById("volumeSlider");
+const mute= document.getElementById("muteBtn");
+const seekBar= document.getElementById("seekBar");
+const currentTime =document.getElementById("currentTime");
+const time= document.getElementById("duration");
 
-let i=0;
-let isPlaying= false;
+let i=0; 
+let isPlaying =false; 
 
-function onYouTubeIframeAPIReady ()
+
+function onYouTubeIframeAPIReady() 
 {
-    player= new YT.Player("player",
+    player=new YT.Player("player", 
     {
-        videoId: databaseJSON.canciones[i].link,
+        videoId:databaseJSON.canciones[i].link,
         playerVars: 
         {
             controls:0,
             autoplay:0
         },
-        events:
+        events: 
         {
-            onReady: ()=> ready(),
-            onStateChange: e => changeState(e)
+            onReady:onPlayerReady,
+            onStateChange:onPlayerStateChange
         }
-    
     });
 }
 
-const ready =()=>
+
+function onPlayerReady() 
 {
     player.setVolume(lastVolume);
-    volSlider.value=lastVolume;
-    duration= player.getDuration();
+    volSlider.value =lastVolume;
+    duration =player.getDuration();
     seekBar.max=duration;
-    updateInfo();
+    time.textContent =formatTime(duration); 
+    songInfo(); 
 
-    interval= setInterval(()=>{
-        if (player.getPlayerState() === YT.PlayerState.PLAYING)
-        {
-            let t= player.getCurrentTime();
-            seekBar.value=t;
-            currentTime.textContent=formatTime(t);
-        }
-
-        let vol= player.getVolume();
-        if (vol !== lastVolume)
-        {
-            volSlider.value=vol;
-            lastVolume=vol;
-        }
-
-        mute.textContent=player.isMuted() ?  "🔇" : "🔊";
-
-    },1000);
+    interval =setInterval(seekBar_volume, 1000);
 }
 
-const changeState = e =>
+
+function seekBar_volume() 
 {
-    if (e.data === YT.PlayerState.PLAYING)
+    if (player.getPlayerState()===YT.PlayerState.PLAYING) 
+    {
+        let t =player.getCurrentTime();
+        seekBar.value=t;
+        currentTime.textContent=formatTime(t);
+    }
+
+    let vol= player.getVolume();
+    if (vol!==lastVolume) 
+    {
+        volSlider.value=vol;
+        lastVolume=vol;
+    }
+
+    mute.textContent = player.isMuted() ? "🔇" : "🔊";
+}
+
+function onPlayerStateChange(event) 
+{
+    if (event.data === YT.PlayerState.PLAYING) 
     {
         isPlaying=true;
         play.src= "../Statics/Media/img/pause.btn.png";
-        duration = player.getDuration();
+        duration=player.getDuration(); 
         seekBar.max=duration;
-        time.textContent= formatTime(duration);
-    }
-    else
+        time.textContent =formatTime(duration);
+    } 
+    else 
     {
         isPlaying=false;
-        play.src="../Statics/Media/img/play.png";
+        play.src = "../Statics/Media/img/play.png";
     }
-};
+}
 
-const loadSong = index =>
+function ciclo(index) 
 {
-    if (index<0)
+    if (index<0) 
     {
-        index=databaseJSON.canciones.length -1;
+        index= databaseJSON.canciones.length-1;
     }
-    if (index>=databaseJSON.canciones.length)
+    if (index>= databaseJSON.canciones.length) 
     {
         index=0;
     }
 
     i=index;
-    updateInfo();
+    songInfo(); 
 
-    if (isPlaying)
-    {
+    if (isPlaying) 
+    { 
         player.playVideo();
+    } 
+    else 
+    {
+        duration=player.getDuration();
+        seekBar.max=duration;
+        time.textContent= formatTime(duration);
     }
-};
+}
 
-const updateInfo =()=>
+function songInfo() 
 {
-    const song =databaseJSON.canciones[i];
-    name.textContent= song.nombre;
+    const song=databaseJSON.canciones[i];
+    names.textContent=song.nombre;
     artist.textContent= song.artista;
-    player.loadVideoById(song.link);
-};
+    player.loadVideoById(song.link); 
+}
 
-const formatTime= s=>
+function formatTime(s) 
 {
-    let m= Math.floor(s/60);
+    let m = Math.floor(s/60);
     let sec = Math.floor(s%60);
-    return `${m}:${sec < 10 ? "0" : ""}${sec}`;
+    return `${m}:${sec<10? "0" :""}${sec}`;
+}
 
-};
 
-next.addEventListener("click", ()=> loadSong(i+1));
-back.addEventListener("click", ()=> loadSong(i-1));
+function nextBtn() 
+{
+    ciclo(i+1);
+}
 
-play.addEventListener("click", ()=>{
-    if (player.getPlayerState()=== YT.PlayerState.PLAYING)
+function backBtn() 
+{
+    ciclo(i-1);
+}
+
+function playBtn() 
+{
+    if (player.getPlayerState() === YT.PlayerState.PLAYING) 
     {
         player.pauseVideo();
-    }
-    else
+    } 
+    else 
     {
         player.playVideo();
     }
-});
+}
 
-volSlider.addEventListener("input", ()=>{
-    let vol= parseInt(volSlider.value);
+function volumeBtn() 
+{
+    let vol=parseInt(volSlider.value);
     player.setVolume(vol);
-    if (vol>0 && player.isMuted())
+    if (vol>0 && player.isMuted()) 
     {
         player.unMute();
     }
-    lastVolume=vol;
-});
+    lastVolume=vol; 
+}
 
-mute.addEventListener("click", ()=>{
-    if (player.isMuted())
+function muteBtn() 
+{
+    if (player.isMuted()) 
     {
         player.unMute();
-        player.setVolume(lastVolume);
-        volSlider.value=lastVolume;
-    }
-    else
+        player.setVolume(lastVolume); 
+        volSlider.value = lastVolume;
+    } 
+    else 
     {
         player.mute();
     }
-});
+}
 
-seekBar.addEventListener("input", ()=> {
-    let seekTo= seekBar.value;
-    player.seekTo(seekTo,true);
+function seekBarBtn() 
+{
+    let seekTo=parseFloat(seekBar.value); 
+    player.seekTo(seekTo,true); 
+}
 
-});
+next.addEventListener("click",nextBtn);
+back.addEventListener("click",backBtn);
+play.addEventListener("click",playBtn);
+volSlider.addEventListener("input",volumeBtn);
+mute.addEventListener("click",muteBtn);
+seekBar.addEventListener("input",seekBarBtn);
 
-document.addEventListener("DOMContentLoaded", () => updateInfo());
+
+document.addEventListener("DOMContentLoaded", songInfo);

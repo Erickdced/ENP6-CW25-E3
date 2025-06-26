@@ -25,7 +25,7 @@
 function setCookie(cookie_name, cookie_value, lifetime)
 {
     const cookie_lifetime = new Date(Date.now + lifetime * 864e5).toUTCString(); //864e5 = 86,400,000 ms -> 1 day
-    document.cookie = `${encodeURIComponent(cookie_name)}=${encodeURIComponent(cookie_value)}; expires=${cookie_lifetime};`;
+    document.cookie = `${encodeURIComponent(cookie_name)}=${encodeURIComponent(cookie_value)}; expires=${cookie_lifetime}`;
 } 
 /**
  * @param {string} cookieName 

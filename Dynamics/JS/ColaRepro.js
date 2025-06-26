@@ -324,6 +324,7 @@ function alternarCancCola(idCancion)
   }
   console.log("Cola actual:",colaRepro);
 }
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function () {
   const playlistContainer = document.getElementById("playlist_container");
 
@@ -346,6 +347,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     playlistContainer.appendChild(div);
   });
+=======
+>>>>>>> 942bb5cc673ebad36fb9361bfd856ee10671cea1
 //vincular los botones
 document.querySelectorAll(".btn-cancion").forEach(boton =>
 {
@@ -355,4 +358,8 @@ document.querySelectorAll(".btn-cancion").forEach(boton =>
     const idCancion=parseInt(boton.dataset.id,10);
     alternarCancCola(idCancion);
   });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 942bb5cc673ebad36fb9361bfd856ee10671cea1
