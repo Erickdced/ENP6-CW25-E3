@@ -5,6 +5,7 @@ let artist_button = document.getElementById("search_artist_btn");
 let album_button = document.getElementById("search_album_btn");
 
 let song_list = databaseJSON.canciones;
+let result_songs;
 let sort_type = "nombre";
 
 show_all();
@@ -37,21 +38,47 @@ search_area.addEventListener("input", ()=>{
 // Muestra todos los botones
 function show_all()
 {
-    for (let i = 0; i < song_list.length ; i++){
-        add_song_button(song_list[i], i, song_list.length-1);
+    for (let j = 0; j < song_list.length ; j++){
+        add_song_button(song_list[j], j, song_list.length-1);
     }
 }
 
 // Agrega las opciones al área de resultados
 function add_song_button(element, value_in_list, line_jump_limit){
     result_area.innerHTML +=
-            `<button class="search_result_element" onclick="song_search(${value_in_list})"> \
+            `<button id="songInBase-`+element.id+`" class="search_result_element" onclick="song_search(${value_in_list})"> \
                 <p class = "search_name_artist_font"><i>${element.nombre}</i> - ${element.artista}</p> \
                 <p class = "search_album_font">${element.album}<p> \
             </button>`;
         if (value_in_list < line_jump_limit)
             result_area.innerHTML += "<br>";
+    result_songs = document.querySelectorAll(".search_result_element");
 }
+
+// Reproducir canción no-playlist
+result_songs.forEach((result_song) =>
+    {
+    result_song.addEventListener("click", ()=>
+    {
+        // Buscar id del elemento en botón
+        song_id_in_base = result_song.id.split("-")[1];
+        for(let j = 0 ; j < song_list.length ; j++)
+        {
+            if (song_list[j].id == song_id_in_base)
+            {
+                originalList = currentSongList
+                currentSongList = [song_list[j]];
+                i = 0;
+                if(originalList.length == 0)
+                {
+                    onYouTubeIframeAPIReady();
+                }
+                songInfo();
+                break;
+            }
+        }
+    });
+});
 
 function isAlphaNum(search_input)
 {

@@ -15,12 +15,13 @@ const currentTime = document.getElementById("currentTime");
 const time = document.getElementById("duration");
 
 let i=0; 
-let isPlaying = false; 
+let isPlaying = false;
+let currentSongList = [];
 
 
 function onYouTubeIframeAPIReady()
 {
-    if (colaRepro.length === 0)
+    if (currentSongList.length === 0)
     {
         const playerContainer = document.getElementById("player");
         playerContainer.innerHTML = "<p style='color:white; text-align:center;'>No hay canciones en la cola.<br>Agrega una canción para comenzar.</p>";
@@ -30,7 +31,7 @@ function onYouTubeIframeAPIReady()
 
     player = new YT.Player("player", 
         {
-        videoId: colaRepro[i].link,
+        videoId: currentSongList[i].link,
         playerVars: 
         {
             controls:0,
@@ -95,13 +96,13 @@ function onPlayerStateChange(event)
 
 function ciclo(index) 
 {
-    if(colaRepro.length===0)
+    if(currentSongList.length===0)
         return;
     if (index<0) 
     {
-        index= colaRepro.length-1;
+        index= currentSongList.length-1;
     }
-    if (index>= colaRepro.length) 
+    if (index>= currentSongList.length) 
     {
         index=0;
     }
@@ -123,7 +124,7 @@ function ciclo(index)
 
 function songInfo() 
 {
-    const song=colaRepro[i];
+    const song=currentSongList[i];
     if(!song)
         return;
     names.textContent=song.nombre;
@@ -204,14 +205,6 @@ function song_search(index)
 }
 
 
-next.addEventListener("click",nextBtn);
-back.addEventListener("click",backBtn);
-play.addEventListener("click",playBtn);
-volSlider.addEventListener("input",volumeBtn);
-mute.addEventListener("click",muteBtn);
-seekBar.addEventListener("input",seekBarBtn);
-
-
 function set_player_cookies() {
     // canción = i
     setCookie("song_number", i, 100);
@@ -223,10 +216,15 @@ function set_player_cookies() {
     setCookie("volume", volSlider.value, 100);
     // muteado = player.isMuted()
     setCookie("muted", player.isMuted(), 100);
+    // Lista de canciones
+    setCookie("song_list", currentSongList, 100);
+
 }
 
 function get_player_cookies() {
     try {
+        currentSongList = getCookie("song_list");
+
         currentSecond = getCookie("second");
         playPause = getCookie("isPlaying");
         volume = getCookie("volume");
@@ -251,4 +249,13 @@ function get_player_cookies() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", songInfo);
+document.addEventListener("DOMContentLoaded", ()=>
+{
+    next.addEventListener("click",nextBtn);
+    back.addEventListener("click",backBtn);
+    play.addEventListener("click",playBtn);
+    volSlider.addEventListener("input",volumeBtn);
+    mute.addEventListener("click",muteBtn);
+    seekBar.addEventListener("input",seekBarBtn);
+    songInfo();
+});
