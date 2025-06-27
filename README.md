@@ -44,7 +44,7 @@ Durante la ejecución de la página es importante iniciar sesión para el funcio
 &nbsp;
 1. Cedillo Pérez Erick David (mentor) - Distribución del proyecto de acuerdo a las habilidades individuales del equipo, asesoría en temas donde el equipo presentaba dificultades para la comprensión o aplicación,  apoyo emocional.
 Martinez Limón Pedro - Realización del script que permitía la navegación entre páginas, las cookies básica de navegación, además del cambio de foto de perfil y nombres.
-2. Munguía Ángel Gabriel - realizó una lista de reproducción inservible
+2. Munguía Ángel Gabriel - realizó una lista de reproducción 
 3. Ollivier Carreño Leileni - Realizó junto con Aurora el diseño con CSS de las vistas buscador y playlist, además de realizar el código para el algoritmo de recomendación. 
 4. Vázquez Robles Aurora Betshabé- Realización del diseño CSS de las vistas inicio de sesión, página principal y usuario, además de que ayudó a la administración del proyecto a la hora de definir los puntos clave a desarrollar.
 5. Vega Navas Saúl - Realización de cookies para la transmisión de información del reproductor entre ventanas, realización del script que da la funcionalidad al buscador.
