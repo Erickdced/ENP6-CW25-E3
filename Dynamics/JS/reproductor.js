@@ -15,11 +15,12 @@ const currentTime =document.getElementById("currentTime");
 const time= document.getElementById("duration");
 
 let i=0; 
-let isPlaying =false; 
+let isPlaying = false; 
 
 
 function onYouTubeIframeAPIReady() 
 {
+    i = getCookie("song_number");
     player=new YT.Player("player", 
     {
         videoId:databaseJSON.canciones[i].link,
@@ -41,13 +42,15 @@ function onYouTubeIframeAPIReady()
 function onPlayerReady() 
 {
     player.setVolume(lastVolume);
-    volSlider.value =lastVolume;
-    duration =player.getDuration();
-    seekBar.max=duration;
-    time.textContent =formatTime(duration); 
-    songInfo(); 
+    volSlider.value = lastVolume;
+    duration = player.getDuration();
+    seekBar.max = duration;
+    time.textContent = formatTime(duration); 
 
-    interval =setInterval(seekBar_volume, 1000);
+    interval = setInterval(seekBar_volume, 1000);
+
+    get_player_cookies();
+    songInfo();
 }
 
 
@@ -60,7 +63,7 @@ function seekBar_volume()
         currentTime.textContent=formatTime(t);
     }
 
-    let vol= player.getVolume();
+    let vol = player.getVolume();
     if (vol!==lastVolume) 
     {
         volSlider.value=vol;
@@ -200,4 +203,57 @@ mute.addEventListener("click",muteBtn);
 seekBar.addEventListener("input",seekBarBtn);
 
 
+<<<<<<< HEAD
+function set_player_cookies(index) {
+    // canción = i
+        alert(index);
+    setCookie("song_number", index, 100);
+    // segundo = seekBar.value
+    setCookie("second", seekBar.value, 100);
+    // play = isPlaying
+    setCookie("isPlaying", player.getPlayerState() === YT.PlayerState.PLAYING, 100);
+    // volumen = volSlider.value
+    setCookie("volume", volSlider.value, 100);
+    // muteado = player.isMuted()
+    setCookie("muted", player.isMuted(), 100);
+    // Lista de canciones
+}
+
+function get_player_cookies() {
+    try {
+        currentSecond = parseInt(getCookie("second"));
+        playPause = getCookie("isPlaying");
+        volume = getCookie("volume");
+
+        player.seekTo(currentSecond, true);
+        seekBar.value = currentSecond;
+        currentTime.textContent = formatTime(currentSecond);
+
+        isPlaying = playPause;
+
+        volSlider.value = volume;
+        lastVolume = volume;
+        player.setVolume(volume);
+
+        if (getCookie("muted"))
+            player.mute();
+
+    }
+    catch (error){
+        alert("AAAAA");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    
+});
 document.addEventListener("DOMContentLoaded", songInfo);
+document.addEventListener("DOMContentLoaded", ()=>
+{
+    const username_link = document.getElementById('username_link');
+
+    if(getUsername() == '')
+        username_link.innerText = "Mi usuario";
+    else
+        username_link.innerText = getUsername();
+});
