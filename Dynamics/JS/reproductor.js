@@ -20,7 +20,7 @@ let isPlaying = false;
 
 function onYouTubeIframeAPIReady() 
 {
-    i = getCookie("song_number");
+    /*i = getCookie("song_number");*/
     player=new YT.Player("player", 
     {
         videoId:databaseJSON.canciones[i].link,
@@ -202,7 +202,7 @@ volSlider.addEventListener("input",volumeBtn);
 mute.addEventListener("click",muteBtn);
 seekBar.addEventListener("input",seekBarBtn);
 
-
+/*
 <<<<<<< HEAD
 function set_player_cookies(index) {
     // canción = i
@@ -256,4 +256,4 @@ document.addEventListener("DOMContentLoaded", ()=>
         username_link.innerText = "Mi usuario";
     else
         username_link.innerText = getUsername();
-});
+});*/
