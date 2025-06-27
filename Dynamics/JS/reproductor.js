@@ -203,6 +203,7 @@ mute.addEventListener("click",muteBtn);
 seekBar.addEventListener("input",seekBarBtn);
 
 
+<<<<<<< HEAD
 function set_player_cookies(index) {
     // canción = i
         alert(index);
@@ -245,4 +246,14 @@ function get_player_cookies() {
 
 document.addEventListener("DOMContentLoaded", ()=>{
     
+});
+document.addEventListener("DOMContentLoaded", songInfo);
+document.addEventListener("DOMContentLoaded", ()=>
+{
+    const username_link = document.getElementById('username_link');
+
+    if(getUsername() == '')
+        username_link.innerText = "Mi usuario";
+    else
+        username_link.innerText = getUsername();
 });

@@ -73,7 +73,9 @@ body
 .login_welcome_img 
 {
     position: absolute;
-    width:100%; 
+    left: 0;
+    top: 0;
+    width: 100%; 
     height:100%; 
 }
 
@@ -132,7 +134,7 @@ body
  {
     background-color: #3C334A; 
     width: 50vw;
-    height: 100vh;
+
     position: absolute;
     right: 0;
     top: 0;
@@ -549,7 +551,16 @@ footer
 .user_config_btn:hover 
 {
     background-color:#FFC247;
+    transform: scale(1.25);
+    transition-duration: 50ms;
 }
+.user_config_btn:not(:hover) 
+{
+    background-color:#FFC247;
+    transform: scale(1.0);
+    transition-duration: 50ms;
+}
+
 
 #footer_user
 {
@@ -592,9 +603,13 @@ footer
 .nav_option:hover
 {
     transform: scale(1.25);
-    font-size: 50px;
+    transition-delay: 50ms;
 }
-
+.nav_option:not(:hover)
+{
+    transform: scale(1.0);
+    transition-delay: 50ms;
+}
 section {
     flex: 1;
     display: flex;
