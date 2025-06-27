@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", ()=>
     {
         let current_pfp_id = getCookie('pfp_id');
         
-        //Si pfp esta vacio o es igual a cuatro iguala a la imagen por defecto
+        //Si pfp esta vacio o es igual a cuatro iguala a la imagen por defecto (id = 0)
         if(current_pfp_id == '' || current_pfp_id == 4)
             current_pfp_id = 0;
         else
