@@ -1,11 +1,10 @@
 
-const listCanc=baseDatosJSON
 let colaRepro=[];
 //obtener cancion por id
 function SeleccancionId(idCancion)
 {
     //encontrar el primer elemento que tenga el id solicitado
-    return listCanc.canciones.find(cancion=>cancion.id===idCancion);
+    return databaseJSON.canciones.find(cancion=>cancion.id===idCancion);
 }
 //checar si una cancion ya pertenece a la cola
 function enCola(idCancion)
@@ -32,10 +31,25 @@ function alternarCancCola(idCancion)
     }
     console.log("Cola actual:", colaRepro);
 }
+
+function shuffleValues() {
+    const copia = [...colaRepro]; // Clona el arreglo
+    for (let i = copia.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copia[i], copia[j]] = [copia[j], copia[i]];
+    }
+    colaRepro = [...copia];
+}
+
+shuffle = document.getElementById("shuffle");
+shuffle.addEventListener("click", ()=>{
+  shuffleValues()
+});
+
 document.addEventListener("DOMContentLoaded", function () {
-  baseDatosJSON.canciones.forEach(cancion => {
-    const artista = baseDatosJSON.artistas.find(a => a.id === cancion.id_artista);
-    const album = baseDatosJSON.album.find(a => a.id === cancion.id_album);
+  databaseJSON.canciones.forEach(cancion => {
+    const artista = databaseJSON.artistas.find(a => a.id === cancion.id_artista);
+    const album = databaseJSON.album.find(a => a.id === cancion.id_album);
 
     const div = document.createElement("div");
     div.classList.add("playlist_song");
@@ -52,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const playlistContainer = document.getElementById("playlist_container");
     playlistContainer.appendChild(div);
   });
+
   document.querySelectorAll(".btn-cancion").forEach(boton => {
     boton.addEventListener("click", () => {
       const idCancion = parseInt(boton.dataset.id, 10);
@@ -59,4 +74,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-

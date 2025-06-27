@@ -49,7 +49,6 @@ function onPlayerReady()
 
     interval = setInterval(seekBar_volume, 1000);
 
-    get_player_cookies();
     songInfo();
 }
 
