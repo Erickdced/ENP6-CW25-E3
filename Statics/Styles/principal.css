@@ -73,7 +73,9 @@ body
 .login_welcome_img 
 {
     position: absolute;
-    width:100%; 
+    left: 0;
+    top: 0;
+    width: 100%; 
     height:100%; 
 }
 
@@ -132,7 +134,7 @@ body
  {
     background-color: #3C334A; 
     width: 50vw;
-    height: 100vh;
+
     position: absolute;
     right: 0;
     top: 0;
