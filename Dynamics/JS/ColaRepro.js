@@ -295,16 +295,18 @@ function SeleccancionId(idCancion)
 //checar si una cancion ya pertenece a la cola
 function enCola(idCancion)
 {
-  
     //checa si algun elemento tiene la id
     return colaRepro.some(cancion => cancion.id === idCancion);
 }
 //agrega o elimina una cancion en la cola
 function alternarCancCola(idCancion) {
-    if (enCola(idCancion)) {
+    if (enCola(idCancion))
+    {
+      //quitar cancion de cola
         colaRepro = colaRepro.filter(cancion => cancion.id !== idCancion);
         console.log(`La canción ${idCancion} ha sido eliminada de la cola`);
-    } else {
+    } else 
+      { //poner cancion en cola
         const canc = SeleccancionId(idCancion);
         if (canc) {
             colaRepro.push(canc);
@@ -326,7 +328,8 @@ function alternarCancCola(idCancion) {
     console.log("Cola actual:", colaRepro);
 }
 document.addEventListener("DOMContentLoaded", function () {
-  baseDatosJSON.canciones.forEach(cancion => 
+
+baseDatosJSON.canciones.forEach(cancion => 
 {
     const artista = baseDatosJSON.artistas.find(a => a.id === cancion.id_artista);
     const album = baseDatosJSON.album.find(a => a.id === cancion.id_album);
@@ -350,7 +353,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const playlistContainer = document.getElementById("playlist_container");
   playlistContainer.appendChild(div);
 });
-  document.querySelectorAll(".btn-cancion").forEach(boton => 
+document.querySelectorAll(".btn-cancion").forEach(boton => 
 {
     boton.addEventListener("click", () => {
       const idCancion = parseInt(boton.dataset.id, 10);

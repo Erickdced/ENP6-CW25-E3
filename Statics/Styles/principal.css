@@ -60,6 +60,7 @@ body
     position: relative;
 }
 /*--------------------------------------------------------------------------------------------------*/
+
 /*INICIO SESIÓN*/
 #login_welcome 
 {
@@ -73,7 +74,9 @@ body
 .login_welcome_img 
 {
     position: absolute;
-    width:100%; 
+    left: 0;
+    top: 0;
+    width: 100%; 
     height:100%; 
 }
 
@@ -257,8 +260,6 @@ body
     margin: 0;
     width: 100%; 
     height: 100%; 
-    
-    
 }
 
 .header_text 
@@ -592,8 +593,7 @@ footer
 }
 .nav_option:hover
 {
-    transform: scale(1.25);
-    font-size: 50px;
+    transform: scale(1.5);
 }
 
 section {
