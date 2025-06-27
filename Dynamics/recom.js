@@ -43,14 +43,14 @@ const sugerirCanciones = () => {
 
     sugeridas.forEach(c => {
         const album = databaseJSON.album.find(a => a.id === c.id_album);
-        const urlImg = album?.url_img || "https://via.placeholder.com/100x100";
+        const urlImg = album?.url_img;
 
         const div = document.createElement("div");
         div.classList.add("home_song_square");
 
         div.innerHTML = `
             <img src="${urlImg}" alt="Portada de ${c.nombre}" 
-            style="width:100px; height:90px; cursor:pointer;" 
+            style="width:100px; height:auto; cursor:pointer;" 
             onclick="cargarYRecomendar(${databaseJSON.canciones.indexOf(c)})">
             <br>
             <strong>${c.nombre}</strong><br>
