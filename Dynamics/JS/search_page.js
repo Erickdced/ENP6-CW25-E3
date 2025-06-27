@@ -22,13 +22,13 @@ search_area.addEventListener("input", ()=>{
     else
     {
         let search_results = [];
-        for (let i = 0 ; i < song_list.length ; i++)
+        for (let j = 0 ; j < song_list.length ; j++)
         {
-            let element = song_list[i];
+            let element = song_list[j];
             let search_value = search_area.value.toLowerCase();
             if (element[sort_type].toLowerCase().indexOf(search_value) != -1 )
             {
-                add_song_button(element, i, song_list.length-1);
+                add_song_button(element, j, song_list.length-1);
             }
         }
     }
@@ -37,8 +37,8 @@ search_area.addEventListener("input", ()=>{
 // Muestra todos los botones
 function show_all()
 {
-    for (let i = 0; i < song_list.length ; i++){
-        add_song_button(song_list[i], i, song_list.length-1);
+    for (let j = 0; j < song_list.length ; j++){
+        add_song_button(song_list[j], j, song_list.length-1);
     }
 }
 
