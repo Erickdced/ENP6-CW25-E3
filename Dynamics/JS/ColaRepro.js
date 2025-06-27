@@ -311,16 +311,8 @@ function alternarCancCola(idCancion) {
         if (canc) {
             colaRepro.push(canc);
             console.log(`Canción ${canc.nombre} ha sido agregada a la cola`);
-            i = colaRepro.length - 1;
-
-            // creador de reproductor si no existe
-            if (!player) {
-                console.log("Inicializando reproductor con la primera canción de la cola...");
-                onYouTubeIframeAPIReady();
-            } else {
-                // sustituir por cancion actual si es que ya esta existente
-                songInfo();
-            }
+            i = colaRepro.length - 1;  // Actualizacion del índice para que apunte a la última canción agregada
+            songInfo();  // Actualizacion de la información del reproductor
         } else {
             console.warn("Canción no encontrada");
         }
@@ -328,16 +320,12 @@ function alternarCancCola(idCancion) {
     console.log("Cola actual:", colaRepro);
 }
 document.addEventListener("DOMContentLoaded", function () {
-
-baseDatosJSON.canciones.forEach(cancion => 
-{
+  baseDatosJSON.canciones.forEach(cancion => {
     const artista = baseDatosJSON.artistas.find(a => a.id === cancion.id_artista);
     const album = baseDatosJSON.album.find(a => a.id === cancion.id_album);
 
     const div = document.createElement("div");
     div.classList.add("playlist_song");
-
-    const enColaActual = enCola(cancion.id); // Verificamos si ya está en la cola
 
     div.innerHTML = `
       <div class="background_song_image">
@@ -346,22 +334,16 @@ baseDatosJSON.canciones.forEach(cancion =>
       <span>${cancion.nombre}</span>
       <span>${cancion.artista}</span>
       <span>${cancion.album}</span>
-      <button class="btn-cancion" data-id="${cancion.id}">
-        ${enColaActual ? "❌" : "🎵"}
-      </button>
+      <button class="btn-cancion" data-id="${cancion.id}">🎵</button>
     `;
-  const playlistContainer = document.getElementById("playlist_container");
-  playlistContainer.appendChild(div);
-});
-document.querySelectorAll(".btn-cancion").forEach(boton => 
-{
+    const playlistContainer = document.getElementById("playlist_container");
+    playlistContainer.appendChild(div);
+  });
+  document.querySelectorAll(".btn-cancion").forEach(boton => {
     boton.addEventListener("click", () => {
       const idCancion = parseInt(boton.dataset.id, 10);
       alternarCancCola(idCancion);
-
-      // Cambiar ícono del botón
-      const estaEnCola = enCola(idCancion);
-      boton.textContent = estaEnCola ? "❌" : "🎵";
     });
+  });
 });
-});
+

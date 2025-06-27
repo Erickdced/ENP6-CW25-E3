@@ -19,19 +19,11 @@ let isPlaying = false;
 let currentSongList = [];
 
 
-function onYouTubeIframeAPIReady()
+function onYouTubeIframeAPIReady() 
 {
-    if (currentSongList.length === 0)
+    player=new YT.Player("player", 
     {
-        const playerContainer = document.getElementById("player");
-        playerContainer.innerHTML = "<p style='color:white; text-align:center;'>No hay canciones en la cola.<br>Agrega una canción para comenzar.</p>";
-        console.warn("Cola vacía: agrega canciones para iniciar el reproductor.");
-        return;
-    }
-    console.log("Reproductor inicializado");
-    player = new YT.Player("player", 
-        {
-        videoId: currentSongList[i].link,
+        videoId:colaRepro[i].link,
         playerVars: 
         {
             controls:0,
@@ -39,11 +31,12 @@ function onYouTubeIframeAPIReady()
         },
         events: 
         {
-            onReady: onPlayerReady,
-            onStateChange: onPlayerStateChange
+            onReady:onPlayerReady,
+            onStateChange:onPlayerStateChange
         }
     });
 }
+
 
 function onPlayerReady() 
 {
@@ -96,13 +89,11 @@ function onPlayerStateChange(event)
 
 function ciclo(index) 
 {
-    if(currentSongList.length===0)
-        return;
     if (index<0) 
     {
-        index= currentSongList.length-1;
+        index= databaseJSON.canciones.length-1;
     }
-    if (index>= currentSongList.length) 
+    if (index>= databaseJSON.canciones.length) 
     {
         index=0;
     }
@@ -124,9 +115,7 @@ function ciclo(index)
 
 function songInfo() 
 {
-    const song=currentSongList[i];
-    if(!song)
-        return;
+    const song=databaseJSON.canciones[i];
     names.textContent=song.nombre;
     artist.textContent= song.artista;
     player.loadVideoById(song.link); 
@@ -205,59 +194,4 @@ function song_search(index)
 }
 
 
-function set_player_cookies() {
-    // canción = i
-    setCookie("song_number", i, 100);
-    // segundo = seekBar.value
-    setCookie("second", seekBar.value, 100);
-    // play = isPlaying
-    setCookie("isPlaying", player.getPlayerState() === YT.PlayerState.PLAYING, 100);
-    // volumen = volSlider.value
-    setCookie("volume", volSlider.value, 100);
-    // muteado = player.isMuted()
-    setCookie("muted", player.isMuted(), 100);
-    // Lista de canciones
-    setCookie("song_list", currentSongList, 100);
-
-}
-
-function get_player_cookies() {
-    try {
-        currentSongList = getCookie("song_list");
-
-        currentSecond = getCookie("second");
-        playPause = getCookie("isPlaying");
-        volume = getCookie("volume");
-
-        i = getCookie("song_number");
-
-        player.seekTo(currentSecond,true);
-        seekBar.value = currentSecond;
-        currentTime.textContent = formatTime(currentSecond);
-
-        isPlaying = playPause;
-
-        volSlider.value = volume;
-        player.setVolume(volume);
-
-        if (getCookie("muted"))
-            player.mute();
-
-    }
-    catch (error){
-
-    }
-}
-
-document.addEventListener("DOMContentLoaded", ()=>
-{
-    onYouTubeIframeAPIReady()
-
-    next.addEventListener("click",nextBtn);
-    back.addEventListener("click",backBtn);
-    play.addEventListener("click",playBtn);
-    volSlider.addEventListener("input",volumeBtn);
-    mute.addEventListener("click",muteBtn);
-    seekBar.addEventListener("input",seekBarBtn);
-    songInfo();
-});
+document.addEventListener("DOMContentLoaded", songInfo);reproductor
