@@ -28,7 +28,7 @@ function onYouTubeIframeAPIReady()
         console.warn("Cola vacía: agrega canciones para iniciar el reproductor.");
         return;
     }
-
+    console.log("Reproductor inicializado");
     player = new YT.Player("player", 
         {
         videoId: currentSongList[i].link,
@@ -251,6 +251,8 @@ function get_player_cookies() {
 
 document.addEventListener("DOMContentLoaded", ()=>
 {
+    onYouTubeIframeAPIReady()
+
     next.addEventListener("click",nextBtn);
     back.addEventListener("click",backBtn);
     play.addEventListener("click",playBtn);

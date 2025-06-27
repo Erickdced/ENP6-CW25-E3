@@ -23,9 +23,9 @@ search_area.addEventListener("input", ()=>{
     else
     {
         let search_results = [];
-        for (let i = 0 ; i < song_list.length ; i++)
+        for (let j = 0 ; j < song_list.length ; j++)
         {
-            let element = song_list[i];
+            let element = song_list[j];
             let search_value = search_area.value.toLowerCase();
             if (element[sort_type].toLowerCase().indexOf(search_value) != -1 )
             {
@@ -58,9 +58,11 @@ function add_song_button(element, value_in_list, line_jump_limit){
 // Reproducir canción no-playlist
 result_songs.forEach((result_song) =>
     {
+    console.log("Checkpoint 1");
     result_song.addEventListener("click", ()=>
     {
         // Buscar id del elemento en botón
+        console.log("Checkpoint 2");
         song_id_in_base = result_song.id.split("-")[1];
         for(let j = 0 ; j < song_list.length ; j++)
         {
