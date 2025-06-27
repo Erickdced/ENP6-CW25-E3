@@ -93,3 +93,15 @@ filter_buttons.forEach(filter_button => {
         filter_button.classList.add("active");
     });
 });
+
+document.addEventListener("DOMContentLoaded", ()=>
+{
+    const username_link = document.getElementById('nav_username');
+    let username = getUsername();
+
+    if(username == '')
+        username_link.innerText = "Mi Usuario";
+    else
+        username_link.innerText = username;
+    
+});
