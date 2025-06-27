@@ -51,20 +51,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const artista = databaseJSON.artistas.find(a => a.id === cancion.id_artista);
     const album = databaseJSON.album.find(a => a.id === cancion.id_album);
 
-    const div = document.createElement("div");
-    div.classList.add("playlist_song");
-
-    div.innerHTML = `
-      <div class="background_song_image">
-        <img class="playlist_song_img" src="${album ? album.url_img : ''}" alt="${cancion.nombre}">
+    const elementContainer = document.createElement("div");
+    elementContainer.innerHTML = `
+      <div class="playlist_song">
+        <div class="background_song_image">
+          <img class="playlist_song_img" src="${album ? album.url_img : ''}" alt="${cancion.nombre}">
+        </div>
+        <span>${cancion.nombre}</span>
+        <span>${cancion.artista}</span>
+        <span>${cancion.album}</span>
       </div>
-      <span>${cancion.nombre}</span>
-      <span>${cancion.artista}</span>
-      <span>${cancion.album}</span>
       <button class="btn-cancion" data-id="${cancion.id}">🎵</button>
     `;
     const playlistContainer = document.getElementById("playlist_container");
-    playlistContainer.appendChild(div);
+    playlistContainer.appendChild(elementContainer);
   });
 
   document.querySelectorAll(".btn-cancion").forEach(boton => {
