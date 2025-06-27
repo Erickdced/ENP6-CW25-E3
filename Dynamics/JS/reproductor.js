@@ -11,23 +11,23 @@ const next = document.getElementById("siguiente");
 const volSlider= document.getElementById("volumeSlider");
 const mute= document.getElementById("muteBtn");
 const seekBar= document.getElementById("seekBar");
-const currentTime = document.getElementById("currentTime");
-const time = document.getElementById("duration");
+const currentTime =document.getElementById("currentTime");
+const time= document.getElementById("duration");
 
 let i=0; 
-let isPlaying = false;
-let currentSongList = [];
+let isPlaying =false; 
 
 
 function onYouTubeIframeAPIReady() 
 {
     player=new YT.Player("player", 
     {
-        videoId:colaRepro[i].link,
+        videoId:databaseJSON.canciones[i].link,
         playerVars: 
         {
             controls:0,
-            autoplay:0
+            autoplay:1,
+            mute:1
         },
         events: 
         {
@@ -44,7 +44,7 @@ function onPlayerReady()
     volSlider.value =lastVolume;
     duration =player.getDuration();
     seekBar.max=duration;
-    time.textContent = formatTime(duration); 
+    time.textContent =formatTime(duration); 
     songInfo(); 
 
     interval =setInterval(seekBar_volume, 1000);
@@ -55,12 +55,12 @@ function seekBar_volume()
 {
     if (player.getPlayerState()===YT.PlayerState.PLAYING) 
     {
-        let t = player.getCurrentTime();
-        seekBar.value = t;
-        currentTime.textContent = formatTime(t);
+        let t =player.getCurrentTime();
+        seekBar.value=t;
+        currentTime.textContent=formatTime(t);
     }
 
-    let vol = player.getVolume();
+    let vol= player.getVolume();
     if (vol!==lastVolume) 
     {
         volSlider.value=vol;
@@ -77,8 +77,8 @@ function onPlayerStateChange(event)
         isPlaying=true;
         play.src= "../Statics/Media/img/pause.btn.png";
         duration=player.getDuration(); 
-        seekBar.max = duration;
-        time.textContent = (duration);
+        seekBar.max=duration;
+        time.textContent =formatTime(duration);
     } 
     else 
     {
@@ -109,7 +109,7 @@ function ciclo(index)
     {
         duration=player.getDuration();
         seekBar.max=duration;
-        time.textContent = formatTime(duration);
+        time.textContent= formatTime(duration);
     }
 }
 
@@ -192,6 +192,12 @@ function song_search(index)
         player.playVideo();
     }
 }
+next.addEventListener("click",nextBtn);
+back.addEventListener("click",backBtn);
+play.addEventListener("click",playBtn);
+volSlider.addEventListener("input",volumeBtn);
+mute.addEventListener("click",muteBtn);
+seekBar.addEventListener("input",seekBarBtn);
 
 
-document.addEventListener("DOMContentLoaded", songInfo);reproductor
+document.addEventListener("DOMContentLoaded", songInfo);

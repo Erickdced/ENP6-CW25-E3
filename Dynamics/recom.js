@@ -49,12 +49,13 @@ const sugerirCanciones = () => {
         div.classList.add("home_song_square");
 
         div.innerHTML = `
-        <img src="${urlImg}" alt="Portada de ${c.nombre}" 
-         style="width:100%; height:auto; cursor:pointer;" 
-         onclick="cargarYRecomendar(${databaseJSON.canciones.indexOf(c)})">
-        <br>
-        <strong>${c.nombre}</strong><br>
-        <em>${c.artista}</em>
+            <img src="${urlImg}" alt="Portada de ${c.nombre}" 
+                 style="width:100px; height:100px; cursor:pointer;" 
+                 onclick="cargarYRecomendar(${databaseJSON.canciones.indexOf(c)})">
+            <br>
+            <strong>${c.nombre}</strong><br>
+            <em>${c.artista}</em><br>
+            <button onclick="cargarYRecomendar(${databaseJSON.canciones.indexOf(c)})">▶️</button>
         `;
 
         contenedor.appendChild(div);
